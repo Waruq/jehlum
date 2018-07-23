@@ -9,4 +9,5 @@ public interface NotificationServiceinterface {
 	public void save(Notification notification);
 	public List<Notification> getAllNotifications();
 	public boolean find(Notification notification); 
+	public List<Notification> getNotificationOnSite(String sitename);
 }

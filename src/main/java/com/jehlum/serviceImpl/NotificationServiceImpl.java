@@ -27,4 +27,7 @@ public class NotificationServiceImpl implements NotificationServiceinterface {
 	public boolean find(Notification notification) {
 		return notificationdao.find(notification);
 	} 
+	public List<Notification> getNotificationOnSite(String sitename){
+		return notificationdao.getNotificationOnSite(sitename);
+	}
 }

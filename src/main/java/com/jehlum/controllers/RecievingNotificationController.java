@@ -8,7 +8,9 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.jehlum.models.Notification;
@@ -20,8 +22,19 @@ public class RecievingNotificationController {
 	@Autowired
 	private NotificationServiceinterface notificationservice;
 	
-	  @RequestMapping("/pullNotifications")
-	   public String pullNotifications() {
+	
+	@RequestMapping("/displayNotification")
+	public String displayNotification(Model model) {
+		model.addAttribute("JKSSB", notificationservice.getNotificationOnSite("jkssb"));
+		model.addAttribute("JKPSC", notificationservice.getNotificationOnSite("jkpsc"));
+		model.addAttribute("KashmirUniversity", notificationservice.getNotificationOnSite("kashmiruniversity"));
+		model.addAttribute("CentralUniversity", notificationservice.getNotificationOnSite("centraluniversity"));
+		model.addAttribute("IUST", notificationservice.getNotificationOnSite("islamicuniversity"));
+		return "notification";
+	}
+	
+	   @Scheduled(cron = "0 0 8/20 * * *")
+	   public void pullNotifications() {
 
 			Document doc;
 			try {
@@ -76,7 +89,7 @@ public class RecievingNotificationController {
 				for (Element link : links) {
 					  Notification notification = new Notification();
 					  notification.setNotificationText(link.text());
-					  notification.setNotificationUrl(link.absUrl("href"));
+					  notification.setNotificationUrl(link.baseUri()+"/"+link.attr("href").substring(5));
 					  notification.setNotificationFetchedDate(new Date().toString());
 					  notification.setNotificationFetchedSite("kashmiruniversity");
 					  if(notificationservice.find(notification))
@@ -135,7 +148,6 @@ public class RecievingNotificationController {
 				e.printStackTrace();
 			}
 			
-			
-		return "";
+		
 	   }
 }

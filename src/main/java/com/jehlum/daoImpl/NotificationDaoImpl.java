@@ -36,4 +36,12 @@ public class NotificationDaoImpl implements NotificationDaoInterface {
 			return false;
 		}
 	}
+	
+	public List<Notification> getNotificationOnSite(String sitename){
+		Query query = em.createQuery("Select n from Notification n where n.notificationFetchedSite =:site order by n.notificationFetchedDate DESC")
+				.setMaxResults(10)
+				.setParameter("site", sitename);
+		return query.getResultList();
+	
+	}
 }
