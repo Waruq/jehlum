@@ -159,6 +159,29 @@ public class RecievingNotificationController {
 	   public void pullNotificationsManually() {
 
 			Document doc;
+			
+			try {
+				System.err.println("conecting to islamic university");
+				doc = Jsoup.connect("http://www.iustlive.com/Index/Default.aspx").get();
+				Element content = doc.getElementById("quicktabs-container-quicktabs");
+				Elements links = content.getElementsByTag("a");
+				
+				for (Element link : links) {
+					  Notification notification = new Notification();
+					  notification.setNotificationText(link.text());
+					  notification.setNotificationUrl(link.absUrl("href"));
+					  notification.setNotificationFetchedSite("islamicuniversity");
+					  if(notificationservice.find(notification))
+					        notificationservice.save(notification);
+					    else {
+					    	break;
+					    }
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				System.err.println("----error in  islamic university----");
+				e.printStackTrace();
+			}
 			try {
 				System.err.println("conecting to jkssb");
 				doc = Jsoup.connect("http://jkssb.nic.in/WriteReadData/File/Home.htm").get();
@@ -178,6 +201,7 @@ public class RecievingNotificationController {
 				}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
+				System.err.println("----error in  jkssb----");
 				e.printStackTrace();
 			}
 			
@@ -200,6 +224,7 @@ public class RecievingNotificationController {
 				}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
+				System.err.println("----error in  jkpsc----");
 				e.printStackTrace();
 			} 
 			
@@ -222,6 +247,7 @@ public class RecievingNotificationController {
 				}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
+				System.err.println("----error in  kashmir university----");
 				e.printStackTrace();
 			} 
 			
@@ -243,32 +269,12 @@ public class RecievingNotificationController {
 					    }
 				}
 			} catch (IOException e) {
+				System.err.println("----error in  cuk----");
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} 
 			
-			
-			try {
-				System.err.println("conecting to islamic university");
-				doc = Jsoup.connect("http://www.iustlive.com/Index/Default.aspx").get();
-				Element content = doc.getElementById("quicktabs-container-quicktabs");
-				Elements links = content.getElementsByTag("a");
-				
-				for (Element link : links) {
-					  Notification notification = new Notification();
-					  notification.setNotificationText(link.text());
-					  notification.setNotificationUrl(link.absUrl("href"));
-					  notification.setNotificationFetchedSite("islamicuniversity");
-					  if(notificationservice.find(notification))
-					        notificationservice.save(notification);
-					    else {
-					    	break;
-					    }
-				}
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+
 			
 		
 	   }
