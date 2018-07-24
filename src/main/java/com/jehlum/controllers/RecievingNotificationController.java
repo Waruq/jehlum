@@ -167,23 +167,28 @@ public class RecievingNotificationController {
 			Document doc;
 			
 			try {
-				 URL url = new URL("http://www.iustlive.com/Index/Default.aspx");
-				  Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("127.0.0.1", 8080)); // or whatever your proxy is
+				 /*URL url = new URL("http://www.iustlive.com/Index/Default.aspx");
+				 Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("http://www.iustlive.com/Index/Default.aspx", 8080)); // or whatever your proxy is
 				  HttpURLConnection uc = (HttpURLConnection)url.openConnection(proxy);
-
+				   
 				  uc.connect();
 				
-				System.err.println("conecting to islamic university");
 				 String line = null;
 				    StringBuffer tmp = new StringBuffer();
 				    BufferedReader in = new BufferedReader(new InputStreamReader(uc.getInputStream()));
 				    while ((line = in.readLine()) != null) {
+				    	System.err.println(line);
 				      tmp.append(line);
 				    }
-
+				    
 				   doc = Jsoup.parse(String.valueOf(tmp));
-				
-				//doc = Jsoup.connect("http://www.iustlive.com/Index/Default.aspx").timeout(0).get();
+				   System.err.println(tmp);*/ 
+				System.err.println("conecting to islamic university");
+
+				System.setProperty("http.proxyHost", "192.168.5.1");
+				System.setProperty("http.proxyPort", "1080");
+
+				doc = Jsoup.connect("http://www.iustlive.com/Index/Default.aspx").timeout(0).get();
 				Element content = doc.getElementById("quicktabs-container-quicktabs");
 				Elements links = content.getElementsByTag("a");
 				
