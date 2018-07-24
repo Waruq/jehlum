@@ -162,7 +162,7 @@ public class RecievingNotificationController {
 			
 			try {
 				System.err.println("conecting to islamic university");
-				doc = Jsoup.connect("http://www.iustlive.com/Index/Default.aspx").get();
+				doc = Jsoup.connect("http://www.iustlive.com/Index/Default.aspx").timeout(0).get();
 				Element content = doc.getElementById("quicktabs-container-quicktabs");
 				Elements links = content.getElementsByTag("a");
 				
