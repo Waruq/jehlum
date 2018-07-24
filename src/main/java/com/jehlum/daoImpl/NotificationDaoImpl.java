@@ -38,7 +38,11 @@ public class NotificationDaoImpl implements NotificationDaoInterface {
 	}
 	
 	public List<Notification> getNotificationOnSite(String sitename){
-		Query query = em.createQuery("Select n from Notification n where n.notificationFetchedSite =:site")
+		
+
+
+		Query query = em.createQuery("Select n from Notification n where n.notificationFetchedSite =:site  order by day(n.notificationFetchedDate) Desc ,"
+				+ "Hour(n.notificationFetchedDate) Desc, minute(n.notificationFetchedDate) Asc, second(n.notificationFetchedDate) Asc")
 				.setMaxResults(10)
 				.setParameter("site", sitename);
 		return query.getResultList();

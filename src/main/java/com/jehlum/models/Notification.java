@@ -1,6 +1,8 @@
 package com.jehlum.models;
 
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,8 +26,10 @@ public class Notification {
 	
 	public String notificationUrl;
 	
+
 	
-	public String notificationFetchedDate;
+	@Column(name="timestamp", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    public Date notificationFetchedDate;
 	
 	public String notificationFetchedSite;
 
@@ -53,11 +57,13 @@ public class Notification {
 		this.notificationUrl = notificationUrl;
 	}
 
-	public String getNotificationFetchedDate() {
+	
+
+	public Date getNotificationFetchedDate() {
 		return notificationFetchedDate;
 	}
 
-	public void setNotificationFetchedDate(String notificationFetchedDate) {
+	public void setNotificationFetchedDate(Date notificationFetchedDate) {
 		this.notificationFetchedDate = notificationFetchedDate;
 	}
 
@@ -68,6 +74,8 @@ public class Notification {
 	public void setNotificationFetchedSite(String notificationFetchedSite) {
 		this.notificationFetchedSite = notificationFetchedSite;
 	}
+
+	
 	
 	
 	
