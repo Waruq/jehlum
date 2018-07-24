@@ -185,10 +185,10 @@ public class RecievingNotificationController {
 				   System.err.println(tmp);*/ 
 				System.err.println("conecting to islamic university");
 
-				System.setProperty("http.proxyHost", "192.168.5.1");
+				/*System.setProperty("http.proxyHost", "192.168.5.1");
 				System.setProperty("http.proxyPort", "1080");
-
-				doc = Jsoup.connect("http://www.iustlive.com/Index/Default.aspx").timeout(0).get();
+*/
+				doc = Jsoup.connect("http://www.iustlive.com/Index/Default.aspx").post();
 				Element content = doc.getElementById("quicktabs-container-quicktabs");
 				Elements links = content.getElementsByTag("a");
 				
