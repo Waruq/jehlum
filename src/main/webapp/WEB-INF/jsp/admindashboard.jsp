@@ -31,7 +31,7 @@
 <body>
 
 <div class="page-loading">
-	<img src="images/loader.gif" alt="" />
+	<img src="${pageContext.servletContext.contextPath}/resources/images/loader.gif" alt="" />
 	<span>Skip Loader</span>
 </div>
 
@@ -42,10 +42,10 @@
 			<div class="res-logo"><a href="index.html" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a></div>
 			<div class="menu-resaction">
 				<div class="res-openmenu">
-					<img src="images/icon.png" alt="" /> Menu
+					<img src="${pageContext.servletContext.contextPath}/resources/images/icon.png" alt="" /> Menu
 				</div>
 				<div class="res-closemenu">
-					<img src="images/icon2.png" alt="" /> Close
+					<img src="${pageContext.servletContext.contextPath}/resources/images/icon2.png" alt="" /> Close
 				</div>
 			</div>
 		</div>
@@ -165,7 +165,7 @@
 		<div class="menu-sec">
 			<div class="container">
 				<div class="logo">
-					<a href="index.html" title=""><img src="images/resource/logo.png" alt="" /></a>
+					<a href="index.html" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/logo.png" alt="" /></a>
 				</div><!-- Logo -->
 				<div class="btn-extars">
 					<a href="#" title="" class="post-job-btn"><i class="la la-plus"></i>Post Jobs</a>

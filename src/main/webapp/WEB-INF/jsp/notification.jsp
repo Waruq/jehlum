@@ -33,7 +33,7 @@
 <body>
 
 	<div class="page-loading">
-		<img src="images/loader.gif" alt="" />
+		<img src="${pageContext.servletContext.contextPath}/resources/images/loader.gif" alt="" />
 		<span>Skip Loader</span>
 	</div>
 
@@ -46,10 +46,10 @@
 				</div>
 				<div class="menu-resaction">
 					<div class="res-openmenu">
-						<img src="images/icon.png" alt="" /> Menu
+						<img src="${pageContext.servletContext.contextPath}/resources/images/icon.png" alt="" /> Menu
 					</div>
 					<div class="res-closemenu">
-						<img src="images/icon2.png" alt="" /> Close
+						<img src="${pageContext.servletContext.contextPath}/resources/images/icon2.png" alt="" /> Close
 					</div>
 				</div>
 			</div>
