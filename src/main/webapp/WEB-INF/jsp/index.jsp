@@ -26,13 +26,14 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/resources/css/colors/colors.css" />
 	<link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/resources/css/bootstrap.css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+	
 
 	
 </head>
 <body>
 
 <div class="page-loading">
-	<img src="images/loader.gif" alt="" />
+	<img src="${pageContext.servletContext.contextPath}/resources/images/loader.gif" alt="" />
 </div>
 
 <div class="theme-layout" id="scrollup">
@@ -290,6 +291,10 @@
 								<div class="job-search">
 									<h3>The Easiest Way to Get Your New Job</h3>
 									<span>Find Jobs, Employment & Career Opportunities</span>
+									<c:if test="${not empty param.error}">
+
+                                           <span  style="color:red">check your credentials and login again</span>
+                                       </c:if>
 									<form>
 										<div class="row">
 											<div class="col-lg-7 col-md-5 col-sm-12 col-xs-12">
@@ -438,7 +443,7 @@
 					<div class="col-lg-12">
 						<div class="simple-text-block">
 							<h3>Make a Difference with Your Online Resume!</h3>
-							<span>Your resume in minutes with JobHunt resume assistant is ready!</span>
+							<span>Your resume in minutes with jehlum resume assistant is ready!</span>
 							<a href="#" title="">Create an Account</a>
 						</div>
 					</div>
@@ -537,35 +542,35 @@
 					<div class="col-lg-12">
 						<div class="heading light">
 							<h2>Kind Words From Happy Candidates</h2>
-							<span>What other people thought about the service provided by JobHunt</span>
+							<span>What other people thought about the service provided by jehlum</span>
 						</div><!-- Heading -->
 						<div class="reviews-sec" id="reviews-carousel">
 							<div class="col-lg-6">
 								<div class="reviews">
 									<img src="${pageContext.servletContext.contextPath}/resources/images/resource/r1.jpg" alt="" />
 									<h3>Augusta Silva <span>Web designer</span></h3>
-									<p>Without JobHunt i’d be homeless, they found me a job and got me sorted out quickly with everything!  Can’t quite believe the service</p>
+									<p>Without jehlum i’d be homeless, they found me a job and got me sorted out quickly with everything!  Can’t quite believe the service</p>
 								</div><!-- Reviews -->
 							</div>
 							<div class="col-lg-6">
 								<div class="reviews">
 									<img src="${pageContext.servletContext.contextPath}/resources/images/resource/r2.jpg" alt="" />
 									<h3>Ali Tufan <span>Web designer</span></h3>
-									<p>Without JobHunt i’d be homeless, they found me a job and got me sorted out quickly with everything!  Can’t quite believe the service</p>
+									<p>Without jehlum i’d be homeless, they found me a job and got me sorted out quickly with everything!  Can’t quite believe the service</p>
 								</div><!-- Reviews -->
 							</div>
 							<div class="col-lg-6">
 								<div class="reviews">
 									<img src="${pageContext.servletContext.contextPath}/resources/images/resource/r1.jpg" alt="" />
 									<h3>Augusta Silva <span>Web designer</span></h3>
-									<p>Without JobHunt i’d be homeless, they found me a job and got me sorted out quickly with everything!  Can’t quite believe the service</p>
+									<p>Without jehlum i’d be homeless, they found me a job and got me sorted out quickly with everything!  Can’t quite believe the service</p>
 								</div><!-- Reviews -->
 							</div>
 							<div class="col-lg-6">
 								<div class="reviews">
 									<img src="${pageContext.servletContext.contextPath}/resources/images/resource/r2.jpg" alt="" />
 									<h3>Ali Tufan <span>Web designer</span></h3>
-									<p>Without JobHunt i’d be homeless, they found me a job and got me sorted out quickly with everything!  Can’t quite believe the service</p>
+									<p>Without jehlum i’d be homeless, they found me a job and got me sorted out quickly with everything!  Can’t quite believe the service</p>
 								</div><!-- Reviews -->
 							</div>
 						</div>
@@ -702,7 +707,7 @@
 								</div>
 								<span>Collin Street West, Victor 8007, Australia.</span>
 								<span>+1 246-345-0695</span>
-								<span>info@jobhunt.com</span>
+								<span>info@jehlum.com</span>
 								<div class="social">
 									<a href="#" title=""><i class="fa fa-facebook"></i></a>
 									<a href="#" title=""><i class="fa fa-twitter"></i></a>
@@ -766,50 +771,13 @@
 			</div>
 		</div>
 		<div class="bottom-line">
-			<span>© 2018 Jobhunt All rights reserved. Design by Creative Layers</span>
+			<span>© 2018 jehlum All rights reserved. Design by Waruq</span>
 			<a href="#scrollup" class="scrollup" title=""><i class="la la-arrow-up"></i></a>
 		</div>
 	</footer>
 
 </div>
-<c:if test="${not empty param.error}">
-<div class="account-popup">
-		<span class="close-popup"><i class="la la-close"></i></span>
-		<h3>User Login</h3>
-		<span>Click To Login With Demo User</span>
-		<div class="select-user">
-			<span>Candidate</span>
-			<span>Employer</span>
-		</div>
-		<c:url value="/j_security_check" var="login"></c:url>
-		<form method="post" action="${login}">
-			<div class="cfield">
-				<input type="text" name="username" placeholder="username" />
-				<i class="la la-user"></i>
-			</div>
-			<div class="cfield">
-				<input type="password" name="password" placeholder="********" />
-				<i class="la la-key"></i>
-			</div>
-			<div class="cfield">
-			<span style="color: red">check your credentials and login again</span>
-			</div>
-			<p class="remember-label">
-				<input type="checkbox" name="cb" id="cb1"><label for="cb1">Remember me</label>
-			</p>
-			<a href="#" title="">Forgot Password?</a>
-			<button type="submit">Login</button>
-		</form>
-		<div class="extra-login">
-			<span>Or</span>
-			<div class="login-social">
-				<a class="fb-login" href="#" title=""><i class="fa fa-facebook"></i></a>
-				<a class="tw-login" href="#" title=""><i class="fa fa-twitter"></i></a>
-			</div>
-		</div>
-	</div>
 
-</c:if>
 
 <div class="account-popup-area signin-popup-box">
 	<div class="account-popup">
