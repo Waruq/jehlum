@@ -298,10 +298,11 @@
 				 		<div class="widget">
 				 			<div class="tree_widget-sec">
 				 				<ul>
-				 					<li class="inner-child">
-				 						<a href="#" title=""><i class="la la-file-text"></i>Notifications</a>
+<%-- 				 				<li><a href="${pageContext.servletContext.contextPath}/displayNotification" title="">View Notifications</a></li>
+ --%>				 					<li >
+				 						<a href="${pageContext.servletContext.contextPath}/displayNotification" title=""><i class="la la-file-text"></i>Notifications</a>
 				 						<ul>
-				 							<li><a href="${pageContext.servletContext.contextPath}/displayNotification" title="">View Notifications</a></li>
+				 							
 				 							
 				 						</ul>
 				 					</li>
