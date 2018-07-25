@@ -39,7 +39,7 @@ public class RecievingNotificationController{
 	}
 	
 	   @Scheduled(cron = "0 0 8/20 * * *")
-	   public void pullNotifications() {
+	   public void pullNotifications() throws ParseException {
 
 			Document doc;
 			try {
@@ -53,7 +53,7 @@ public class RecievingNotificationController{
 				    notification.setNotificationText(link.text());
 				    notification.setNotificationUrl(link.absUrl("href"));
 				    notification.setNotificationFetchedSite("jkssb");
-					notification.setNotificationFetchedDate(new Date());
+					notification.setNotificationFetchedDate(getIndianDate(new Date()));
 				    if(notificationservice.find(notification))
 				        notificationservice.save(notification);
 				    else {
@@ -76,7 +76,7 @@ public class RecievingNotificationController{
 					  notification.setNotificationText(link.text());
 					  notification.setNotificationUrl(link.absUrl("href"));
 					  notification.setNotificationFetchedSite("jkpsc");
-    				  notification.setNotificationFetchedDate(new Date());
+    				  notification.setNotificationFetchedDate(getIndianDate(new Date()));
 					  if(notificationservice.find(notification))
 					        notificationservice.save(notification);
 					    else {
@@ -99,7 +99,7 @@ public class RecievingNotificationController{
 					  notification.setNotificationText(link.text());
 					  notification.setNotificationUrl(link.baseUri()+"/"+link.attr("href").substring(5));
 					  notification.setNotificationFetchedSite("kashmiruniversity");
-					  notification.setNotificationFetchedDate(new Date());
+					  notification.setNotificationFetchedDate(getIndianDate(new Date()));
 					  if(notificationservice.find(notification))
 					        notificationservice.save(notification);
 					    else {
@@ -122,7 +122,7 @@ public class RecievingNotificationController{
 					  notification.setNotificationText(link.text());
 					  notification.setNotificationUrl(link.absUrl("href"));
 					  notification.setNotificationFetchedSite("centraluniversity");
-					  notification.setNotificationFetchedDate(new Date());
+					  notification.setNotificationFetchedDate(getIndianDate(new Date()));
 					  if(notificationservice.find(notification))
 					        notificationservice.save(notification);
 					    else {
@@ -146,7 +146,7 @@ public class RecievingNotificationController{
 					  notification.setNotificationText(link.text());
 					  notification.setNotificationUrl(link.absUrl("href"));
 					  notification.setNotificationFetchedSite("islamicuniversity");
-					  notification.setNotificationFetchedDate(new Date());
+					  notification.setNotificationFetchedDate(getIndianDate(new Date()));
 					  if(notificationservice.find(notification))
 					        notificationservice.save(notification);
 					    else {
