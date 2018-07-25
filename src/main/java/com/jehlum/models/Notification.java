@@ -1,7 +1,10 @@
 package com.jehlum.models;
 
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +12,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 
 
@@ -28,8 +33,8 @@ public class Notification {
 	
 
 	
-	@Column(name="timestamp", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    public Date notificationFetchedDate;
+	@DateTimeFormat(pattern="dd-MM-yyyy HH:mm:ss")
+	public Date notificationFetchedDate;
 	
 	public String notificationFetchedSite;
 
@@ -63,8 +68,8 @@ public class Notification {
 		return notificationFetchedDate;
 	}
 
-	public void setNotificationFetchedDate(Date notificationFetchedDate) {
-		this.notificationFetchedDate = notificationFetchedDate;
+	public void setNotificationFetchedDate(Date notificationFetchedDate){
+		this.notificationFetchedDate=notificationFetchedDate;
 	}
 
 	public String getNotificationFetchedSite() {

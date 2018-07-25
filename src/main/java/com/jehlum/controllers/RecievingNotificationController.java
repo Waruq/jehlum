@@ -1,17 +1,10 @@
 package com.jehlum.controllers;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.InetSocketAddress;
-import java.net.Proxy;
-import java.net.URL;
-import java.util.ArrayDeque;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Deque;
-import java.util.Stack;
-import java.util.concurrent.TimeUnit;
+import java.util.TimeZone;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -22,12 +15,14 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.jehlum.models.Notification;
 import com.jehlum.serviceInterface.NotificationServiceinterface;
 
 @Controller
-public class RecievingNotificationController {
+public class RecievingNotificationController{
 	
 	@Autowired
 	private NotificationServiceinterface notificationservice;
@@ -58,6 +53,7 @@ public class RecievingNotificationController {
 				    notification.setNotificationText(link.text());
 				    notification.setNotificationUrl(link.absUrl("href"));
 				    notification.setNotificationFetchedSite("jkssb");
+					notification.setNotificationFetchedDate(new Date());
 				    if(notificationservice.find(notification))
 				        notificationservice.save(notification);
 				    else {
@@ -80,6 +76,7 @@ public class RecievingNotificationController {
 					  notification.setNotificationText(link.text());
 					  notification.setNotificationUrl(link.absUrl("href"));
 					  notification.setNotificationFetchedSite("jkpsc");
+    				  notification.setNotificationFetchedDate(new Date());
 					  if(notificationservice.find(notification))
 					        notificationservice.save(notification);
 					    else {
@@ -102,6 +99,7 @@ public class RecievingNotificationController {
 					  notification.setNotificationText(link.text());
 					  notification.setNotificationUrl(link.baseUri()+"/"+link.attr("href").substring(5));
 					  notification.setNotificationFetchedSite("kashmiruniversity");
+					  notification.setNotificationFetchedDate(new Date());
 					  if(notificationservice.find(notification))
 					        notificationservice.save(notification);
 					    else {
@@ -124,6 +122,7 @@ public class RecievingNotificationController {
 					  notification.setNotificationText(link.text());
 					  notification.setNotificationUrl(link.absUrl("href"));
 					  notification.setNotificationFetchedSite("centraluniversity");
+					  notification.setNotificationFetchedDate(new Date());
 					  if(notificationservice.find(notification))
 					        notificationservice.save(notification);
 					    else {
@@ -147,6 +146,7 @@ public class RecievingNotificationController {
 					  notification.setNotificationText(link.text());
 					  notification.setNotificationUrl(link.absUrl("href"));
 					  notification.setNotificationFetchedSite("islamicuniversity");
+					  notification.setNotificationFetchedDate(new Date());
 					  if(notificationservice.find(notification))
 					        notificationservice.save(notification);
 					    else {
@@ -162,7 +162,7 @@ public class RecievingNotificationController {
 	   }
 	   
 	   @RequestMapping("/pullNotifications")
-	   public void pullNotificationsManually() {
+	   public void pullNotificationsManually() throws ParseException{
 
 			Document doc;
 			
@@ -179,6 +179,8 @@ public class RecievingNotificationController {
 					  notification.setNotificationText(link.text());
 					  notification.setNotificationUrl(link.absUrl("href"));
 					  notification.setNotificationFetchedSite("islamicuniversity");
+					  notification.setNotificationFetchedDate(getIndianDate(new Date()));
+
 					  if(notificationservice.find(notification))
 					        notificationservice.save(notification);
 					    else {
@@ -201,6 +203,7 @@ public class RecievingNotificationController {
 				    notification.setNotificationText(link.text());
 				    notification.setNotificationUrl(link.absUrl("href"));
 				    notification.setNotificationFetchedSite("jkssb");
+				    notification.setNotificationFetchedDate(getIndianDate(new Date()));
 				    if(notificationservice.find(notification))
 				        notificationservice.save(notification);
 				    else {
@@ -224,6 +227,8 @@ public class RecievingNotificationController {
 					  notification.setNotificationText(link.text());
 					  notification.setNotificationUrl(link.absUrl("href"));
 					  notification.setNotificationFetchedSite("jkpsc");
+					  notification.setNotificationFetchedDate(getIndianDate(new Date()));
+
 					  if(notificationservice.find(notification))
 					        notificationservice.save(notification);
 					    else {
@@ -247,6 +252,8 @@ public class RecievingNotificationController {
 					  notification.setNotificationText(link.text());
 					  notification.setNotificationUrl(link.baseUri()+"/"+link.attr("href").substring(5));
 					  notification.setNotificationFetchedSite("kashmiruniversity");
+					  notification.setNotificationFetchedDate(getIndianDate(new Date()));
+
 					  if(notificationservice.find(notification))
 					        notificationservice.save(notification);
 					    else {
@@ -270,6 +277,8 @@ public class RecievingNotificationController {
 					  notification.setNotificationText(link.text());
 					  notification.setNotificationUrl(link.absUrl("href"));
 					  notification.setNotificationFetchedSite("centraluniversity");
+					  notification.setNotificationFetchedDate(getIndianDate(new Date()));
+
 					  if(notificationservice.find(notification))
 					        notificationservice.save(notification);
 					    else {
@@ -284,6 +293,13 @@ public class RecievingNotificationController {
 			
 
 			
-		
+	   }	
+	   
+	   public Date getIndianDate(Date notificationFetchedDate) throws ParseException {
+			SimpleDateFormat sdf =  new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+			sdf.setTimeZone(TimeZone.getTimeZone("IST"));
+			String date = sdf.format(notificationFetchedDate);
+			return new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").parse(date);
 	   }
+	   
 }
