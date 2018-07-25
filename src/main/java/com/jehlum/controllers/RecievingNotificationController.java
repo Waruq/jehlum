@@ -38,8 +38,8 @@ public class RecievingNotificationController{
 		return "notification";
 	}
 	
-	   @Scheduled(cron = "0 0 8/20 * * *")
-	   public void pullNotifications() throws ParseException {
+	@Scheduled(cron = "0 0 8,20 * * *")
+	public void pullNotifications() throws ParseException {
 
 			Document doc;
 			try {
