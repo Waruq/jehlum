@@ -167,28 +167,10 @@ public class RecievingNotificationController {
 			Document doc;
 			
 			try {
-				 /*URL url = new URL("http://www.iustlive.com/Index/Default.aspx");
-				 Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("http://www.iustlive.com/Index/Default.aspx", 8080)); // or whatever your proxy is
-				  HttpURLConnection uc = (HttpURLConnection)url.openConnection(proxy);
-				   
-				  uc.connect();
-				
-				 String line = null;
-				    StringBuffer tmp = new StringBuffer();
-				    BufferedReader in = new BufferedReader(new InputStreamReader(uc.getInputStream()));
-				    while ((line = in.readLine()) != null) {
-				    	System.err.println(line);
-				      tmp.append(line);
-				    }
-				    
-				   doc = Jsoup.parse(String.valueOf(tmp));
-				   System.err.println(tmp);*/ 
+				 
 				System.err.println("conecting to islamic university");
 
-				/*System.setProperty("http.proxyHost", "192.168.5.1");
-				System.setProperty("http.proxyPort", "1080");
-*/
-				doc = Jsoup.connect("http://www.iustlive.com/Index/Default.aspx").post();
+				doc = Jsoup.connect("http://www.iustlive.com/Index/Default.aspx").get();
 				Element content = doc.getElementById("quicktabs-container-quicktabs");
 				Elements links = content.getElementsByTag("a");
 				
