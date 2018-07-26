@@ -38,7 +38,7 @@ public class RecievingNotificationController{
 		return "notification";
 	}
 	
-	   @Scheduled(cron = "0 0 8/20 * * *")
+	   @Scheduled(cron = "0 0 8,20 * * *")
 	   public void pullNotifications() {
 
 			Document doc;
@@ -170,7 +170,7 @@ public class RecievingNotificationController{
 				 
 				System.err.println("conecting to islamic university");
 
-				doc = Jsoup.connect("http://www.iustlive.com/Index/Default.aspx").get();
+				doc = Jsoup.connect("http://www.iustlive.com/Index/Default.aspx").timeout(0).get();
 				Element content = doc.getElementById("quicktabs-container-quicktabs");
 				Elements links = content.getElementsByTag("a");
 				
