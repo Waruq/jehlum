@@ -52,7 +52,7 @@
 		</div>
 		<div class="responsive-opensec">
 			<div class="btn-extars">
-				<a href="#" title="" class="post-job-btn"><i class="la la-plus"></i>Post Jobs</a>
+				<a href="#" title="" class="post-job-btn signin-popup"><i class="la la-plus"></i>Post Jobs</a>
 				<ul class="account-btns">
 					<li class="signup-popup"><a title=""><i class="la la-key"></i> Sign Up</a></li>
 					<li class="signin-popup"><a title=""><i class="la la-external-link-square"></i> Login</a></li>
@@ -62,103 +62,7 @@
 				<input type="text" placeholder="Job title, keywords or company name" />
 				<button type="submit"><i class="la la-search"></i></button>
 			</form>
-			<div class="responsivemenu">
-				<ul>
-						<li class="menu-item-has-children">
-							<a href="#" title="">Home</a>
-							<ul>
-								<li><a href="index.html" title="">Home Layout 1</a></li>
-								<li><a href="index2.html" title="">Home Layout 2</a></li>
-								<li><a href="index3.html" title="">Home Layout 3</a></li>
-								<li><a href="index4.html" title="">Home Layout 4</a></li>
-								<li><a href="index5.html" title="">Home Layout 5</a></li>
-							</ul>
-						</li>
-						<li class="menu-item-has-children">
-							<a href="#" title="">Employers</a>
-							<ul>
-								<li><a href="employer_list1.html" title=""> Employer List 1</a></li>
-								<li><a href="employer_list2.html" title="">Employer List 2</a></li>
-								<li><a href="employer_list3.html" title="">Employer List 3</a></li>
-								<li><a href="employer_list4.html" title="">Employer List 4</a></li>
-								<li><a href="employer_single1.html" title="">Employer Single 1</a></li>
-								<li><a href="employer_single2.html" title="">Employer Single 2</a></li>
-								<li class="menu-item-has-children">
-									<a href="#" title="">Employer Dashboard</a>
-									<ul>
-										<li><a href="employer_manage_jobs.html" title="">Employer Job Manager</a></li>
-										<li><a href="employer_packages.html" title="">Employer Packages</a></li>
-										<li><a href="employer_post_new.html" title="">Employer Post New</a></li>
-										<li><a href="employer_profile.html" title="">Employer Profile</a></li>
-										<li><a href="employer_resume.html" title="">Employer Resume</a></li>
-										<li><a href="employer_transactions.html" title="">Employer Transaction</a></li>
-										<li><a href="employer_job_alert.html" title="">Employer Job Alert</a></li>
-										<li><a href="employer_change_password.html" title="">Employer Change Password</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li class="menu-item-has-children">
-							<a href="#" title="">Candidates</a>
-							<ul>
-								<li><a href="candidates_list.html" title="">Candidates List 1</a></li>
-								<li><a href="candidates_list2.html" title="">Candidates List 2</a></li>
-								<li><a href="candidates_list3.html" title="">Candidates List 3</a></li>
-								<li><a href="candidates_single.html" title="">Candidates Single 1</a></li>
-								<li><a href="candidates_single2.html" title="">Candidates Single 2</a></li>
-								<li class="menu-item-has-children">
-									<a href="#" title="">Candidates Dashboard</a>
-									<ul>
-										<li><a href="candidates_my_resume.html" title="">Candidates Resume</a></li>
-										<li><a href="candidates_my_resume_add_new.html" title="">Candidates Resume new</a></li>
-										<li><a href="candidates_profile.html" title="">Candidates Profile</a></li>
-										<li><a href="candidates_shortlist.html" title="">Candidates Shortlist</a></li>
-										<li><a href="candidates_job_alert.html" title="">Candidates Job Alert</a></li>
-										<li><a href="candidates_dashboard.html" title="">Candidates Dashboard</a></li>
-										<li><a href="candidates_cv_cover_letter.html" title="">CV Cover Letter</a></li>
-										<li><a href="candidates_change_password.html" title="">Change Password</a></li>
-										<li><a href="candidates_applied_jobs.html" title="">Candidates Applied Jobs</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li class="menu-item-has-children">
-							<a href="#" title="">Blog</a>
-							<ul>
-								<li><a href="blog_list.html"> Blog List 1</a></li>
-								<li><a href="blog_list2.html">Blog List 2</a></li>
-								<li><a href="blog_list3.html">Blog List 3</a></li>
-								<li><a href="blog_single.html">Blog Single</a></li>
-							</ul>
-						</li>
-						<li class="menu-item-has-children">
-							<a href="#" title="">Job</a>
-							<ul>
-								<li><a href="job_list_classic.html">Job List Classic</a></li>
-								<li><a href="job_list_grid.html">Job List Grid</a></li>
-								<li><a href="job_list_modern.html">Job List Modern</a></li>
-								<li><a href="job_single1.html">Job Single 1</a></li>
-								<li><a href="job_single2.html">Job Single 2</a></li>
-								<li><a href="job-single3.html">Job Single 3</a></li>
-							</ul>
-						</li>
-						<li class="menu-item-has-children">
-							<a href="#" title="">Pages</a>
-							<ul>
-								<li><a href="about.html" title="">About Us</a></li>
-								<li><a href="404.html" title="">404 Error</a></li>
-								<li><a href="contact.html" title="">Contact Us 1</a></li>
-								<li><a href="contact2.html" title="">Contact Us 2</a></li>
-								<li><a href="faq.html" title="">FAQ's</a></li>
-								<li><a href="how_it_works.html" title="">How it works</a></li>
-								<li><a href="login.html" title="">Login</a></li>
-								<li><a href="pricing.html" title="">Pricing Plans</a></li>
-								<li><a href="register.html" title="">Register</a></li>
-								<li><a href="terms_and_condition.html" title="">Terms & Condition</a></li>
-							</ul>
-						</li>
-					</ul>
-			</div>
+			
 		</div>
 	</div>
 	
@@ -169,109 +73,13 @@
 					<a href="index.html" title=""><img class="hidesticky" src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /><img class="showsticky" src="images/resource/logo10.png" alt="" /></a>
 				</div><!-- Logo -->
 				<div class="btn-extars">
-					<a href="#" title="" class="post-job-btn"><i class="la la-plus"></i>Post Jobs</a>
+					<a href="#" title="" class="post-job-btn signin-popup"><i class="la la-plus"></i>Post Jobs</a>
 					<ul class="account-btns">
 						<li class="signup-popup"><a title=""><i class="la la-key"></i> Sign Up</a></li>
 						<li class="signin-popup"><a title=""><i class="la la-external-link-square"></i> Login</a></li>
 					</ul>
 				</div><!-- Btn Extras -->
-				<nav>
-					<ul>
-						<li class="menu-item-has-children">
-							<a href="#" title="">Home</a>
-							<ul>
-								<li><a href="index.html" title="">Home Layout 1</a></li>
-								<li><a href="index2.html" title="">Home Layout 2</a></li>
-								<li><a href="index3.html" title="">Home Layout 3</a></li>
-								<li><a href="index4.html" title="">Home Layout 4</a></li>
-								<li><a href="index5.html" title="">Home Layout 5</a></li>
-							</ul>
-						</li>
-						<li class="menu-item-has-children">
-							<a href="#" title="">Employers</a>
-							<ul>
-								<li><a href="employer_list1.html" title=""> Employer List 1</a></li>
-								<li><a href="employer_list2.html" title="">Employer List 2</a></li>
-								<li><a href="employer_list3.html" title="">Employer List 3</a></li>
-								<li><a href="employer_list4.html" title="">Employer List 4</a></li>
-								<li><a href="employer_single1.html" title="">Employer Single 1</a></li>
-								<li><a href="employer_single2.html" title="">Employer Single 2</a></li>
-								<li class="menu-item-has-children">
-									<a href="#" title="">Employer Dashboard</a>
-									<ul>
-										<li><a href="employer_manage_jobs.html" title="">Employer Job Manager</a></li>
-										<li><a href="employer_packages.html" title="">Employer Packages</a></li>
-										<li><a href="employer_post_new.html" title="">Employer Post New</a></li>
-										<li><a href="employer_profile.html" title="">Employer Profile</a></li>
-										<li><a href="employer_resume.html" title="">Employer Resume</a></li>
-										<li><a href="employer_transactions.html" title="">Employer Transaction</a></li>
-										<li><a href="employer_job_alert.html" title="">Employer Job Alert</a></li>
-										<li><a href="employer_change_password.html" title="">Employer Change Password</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li class="menu-item-has-children">
-							<a href="#" title="">Candidates</a>
-							<ul>
-								<li><a href="candidates_list.html" title="">Candidates List 1</a></li>
-								<li><a href="candidates_list2.html" title="">Candidates List 2</a></li>
-								<li><a href="candidates_list3.html" title="">Candidates List 3</a></li>
-								<li><a href="candidates_single.html" title="">Candidates Single 1</a></li>
-								<li><a href="candidates_single2.html" title="">Candidates Single 2</a></li>
-								<li class="menu-item-has-children">
-									<a href="#" title="">Candidates Dashboard</a>
-									<ul>
-										<li><a href="candidates_my_resume.html" title="">Candidates Resume</a></li>
-										<li><a href="candidates_my_resume_add_new.html" title="">Candidates Resume new</a></li>
-										<li><a href="candidates_profile.html" title="">Candidates Profile</a></li>
-										<li><a href="candidates_shortlist.html" title="">Candidates Shortlist</a></li>
-										<li><a href="candidates_job_alert.html" title="">Candidates Job Alert</a></li>
-										<li><a href="candidates_dashboard.html" title="">Candidates Dashboard</a></li>
-										<li><a href="candidates_cv_cover_letter.html" title="">CV Cover Letter</a></li>
-										<li><a href="candidates_change_password.html" title="">Change Password</a></li>
-										<li><a href="candidates_applied_jobs.html" title="">Candidates Applied Jobs</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li class="menu-item-has-children">
-							<a href="#" title="">Blog</a>
-							<ul>
-								<li><a href="blog_list.html"> Blog List 1</a></li>
-								<li><a href="blog_list2.html">Blog List 2</a></li>
-								<li><a href="blog_list3.html">Blog List 3</a></li>
-								<li><a href="blog_single.html">Blog Single</a></li>
-							</ul>
-						</li>
-						<li class="menu-item-has-children">
-							<a href="#" title="">Job</a>
-							<ul>
-								<li><a href="job_list_classic.html">Job List Classic</a></li>
-								<li><a href="job_list_grid.html">Job List Grid</a></li>
-								<li><a href="job_list_modern.html">Job List Modern</a></li>
-								<li><a href="job_single1.html">Job Single 1</a></li>
-								<li><a href="job_single2.html">Job Single 2</a></li>
-								<li><a href="job-single3.html">Job Single 3</a></li>
-							</ul>
-						</li>
-						<li class="menu-item-has-children">
-							<a href="#" title="">Pages</a>
-							<ul>
-								<li><a href="about.html" title="">About Us</a></li>
-								<li><a href="404.html" title="">404 Error</a></li>
-								<li><a href="contact.html" title="">Contact Us 1</a></li>
-								<li><a href="contact2.html" title="">Contact Us 2</a></li>
-								<li><a href="faq.html" title="">FAQ's</a></li>
-								<li><a href="how_it_works.html" title="">How it works</a></li>
-								<li><a href="login.html" title="">Login</a></li>
-								<li><a href="pricing.html" title="">Pricing Plans</a></li>
-								<li><a href="register.html" title="">Register</a></li>
-								<li><a href="terms_and_condition.html" title="">Terms & Condition</a></li>
-							</ul>
-						</li>
-					</ul>
-				</nav><!-- Menus -->
+				
 			</div>
 		</div>
 	</header>
@@ -295,6 +103,9 @@
 
                                            <span  style="color:red">check your credentials and login again</span>
                                        </c:if>
+                                       <span  style="color:green">${success}</span>
+                                        <span  style="color:red">${fail}</span>
+                                      
 									<form>
 										<div class="row">
 											<div class="col-lg-7 col-md-5 col-sm-12 col-xs-12">
@@ -461,68 +272,22 @@
 							<h2>Featured Jobs</h2>
 							<span>Leading Employers already using job and talent.</span>
 						</div><!-- Heading -->
+						<c:forEach items="${adds}" var="add">
 						<div class="job-listings-sec">
 							<div class="job-listing">
 								<div class="job-title-sec">
-									<div class="c-logo"> <img src="${pageContext.servletContext.contextPath}/resources/images/resource/l1.png" alt="" /> </div>
-									<h3><a href="#" title="">Web Designer / Developer</a></h3>
-									<span>Massimo Artemisis</span>
+									<div class="c-logo"> <img style="max-width: 50%;" src="${pageContext.servletContext.contextPath}/getUserImages/${add.files[0]}" alt="" /> </div>
+									<h3><a href="#" class="signin-popup" title="">${add.addtitle}</a></h3>
+									<span>${add.category}</span>
 								</div>
-								<span class="job-lctn"><i class="la la-map-marker"></i>Sacramento, California</span>
+								<span class="job-lctn"><i class="la la-map-marker"></i>Jammu and Kashmir</span>
 								<span class="fav-job"><i class="la la-heart-o"></i></span>
 								<span class="job-is ft">FULL TIME</span>
 							</div><!-- Job -->
-							<div class="job-listing">
-								<div class="job-title-sec">
-									<div class="c-logo"> <img src="${pageContext.servletContext.contextPath}/resources/images/resource/l2.png" alt="" /> </div>
-									<h3><a href="#" title="">Marketing Director</a></h3>
-									<span>Tix Dog</span>
-								</div>
-								<span class="job-lctn"><i class="la la-map-marker"></i>Rennes, France</span>
-								<span class="fav-job"><i class="la la-heart-o"></i></span>
-								<span class="job-is pt">PART TIME</span>
-							</div><!-- Job -->
-							<div class="job-listing">
-								<div class="job-title-sec">
-									<div class="c-logo"> <img src="${pageContext.servletContext.contextPath}/resources/images/resource/l3.png" alt="" /> </div>
-									<h3><a href="#" title="">C Developer (Senior) C .Net</a></h3>
-									<span>StarHealth</span>
-								</div>
-								<span class="job-lctn"><i class="la la-map-marker"></i>London, United Kingdom</span>
-								<span class="fav-job"><i class="la la-heart-o"></i></span>
-								<span class="job-is ft">FULL TIME</span>
-							</div><!-- Job -->
-							<div class="job-listing">
-								<div class="job-title-sec">
-									<div class="c-logo"> <img src="${pageContext.servletContext.contextPath}/resources/images/resource/l4.png" alt="" /> </div>
-									<h3><a href="#" title="">Application Developer For Android</a></h3>
-									<span>Altes Bank</span>
-								</div>
-								<span class="job-lctn"><i class="la la-map-marker"></i>Istanbul, Turkey</span>
-								<span class="fav-job"><i class="la la-heart-o"></i></span>
-								<span class="job-is fl">FREELANCE</span>
-							</div><!-- Job -->
-							<div class="job-listing">
-								<div class="job-title-sec">
-									<div class="c-logo"> <img src="${pageContext.servletContext.contextPath}/resources/images/resource/l5.png" alt="" /> </div>
-									<h3><a href="#" title="">Regional Sales Manager South east Asia</a></h3>
-									<span>Vincent</span>
-								</div>
-								<span class="job-lctn"><i class="la la-map-marker"></i>Ajax, Ontario</span>
-								<span class="fav-job"><i class="la la-heart-o"></i></span>
-								<span class="job-is tp">TEMPORARY</span>
-							</div><!-- Job -->
-							<div class="job-listing">
-								<div class="job-title-sec">
-									<div class="c-logo"> <img src="${pageContext.servletContext.contextPath}/resources/images/resource/l6.png" alt="" /> </div>
-									<h3><a href="#" title="">Social Media and Public Relation Executive </a></h3>
-									<span>MediaLab</span>
-								</div>
-								<span class="job-lctn"><i class="la la-map-marker"></i>Ankara / Turkey</span>
-								<span class="fav-job"><i class="la la-heart-o"></i></span>
-								<span class="job-is ft">FULL TIME</span>
-							</div><!-- Job -->
+							
+							
 						</div>
+						</c:forEach>
 					</div>
 					<div class="col-lg-12">
 						<div class="browse-all-cat">
@@ -783,11 +548,7 @@
 	<div class="account-popup">
 		<span class="close-popup"><i class="la la-close"></i></span>
 		<h3>User Login</h3>
-		<span>Click To Login With Demo User</span>
-		<div class="select-user">
-			<span>Candidate</span>
-			<span>Employer</span>
-		</div>
+		
 		<c:url value="/j_security_check" var="login"></c:url>
 		<form method="post" action="${login}">
 			<div class="cfield">
@@ -799,7 +560,7 @@
 				<i class="la la-key"></i>
 			</div>
 			<p class="remember-label">
-				<input type="checkbox" name="cb" id="cb1"><label for="cb1">Remember me</label>
+				<label for="cb1">Remember me</label>
 			</p>
 			<a href="#" title="">Forgot Password?</a>
 			<button type="submit">Login</button>
@@ -814,41 +575,44 @@
 	</div>
 </div><!-- LOGIN POPUP -->
 
+
 <div class="account-popup-area signup-popup-box">
 	<div class="account-popup">
 		<span class="close-popup"><i class="la la-close"></i></span>
 		<h3>Sign Up</h3>
-		<div class="select-user">
-			<span>Candidate</span>
-			<span>Employer</span>
-		</div>
-		<form>
+		
+		<c:url value="/registerUser" var="reg"></c:url>
+		<form:form method="post" action="${reg}" modelAttribute="user">
+		
+		    <div class="select-user">
+			<span><input type="radio" name="usertype" value="admin"/>Admin</span>
+			<span> <input type="radio" name="usertype" value="user"/>User</span>
+		   </div>
+			
+			<!-- <div class="cfield">
+				<input type="radio" name="usertype" value="admin"/>Admin
+			    <input type="radio" name="usertype" value="user"/>User
+			</div> -->
+			
 			<div class="cfield">
-				<input type="text" placeholder="Username" />
+				<form:input type="text" path="name" placeholder="Username" />
 				<i class="la la-user"></i>
 			</div>
 			<div class="cfield">
-				<input type="password" placeholder="********" />
+				<form:input type="password" path="password" placeholder="********" />
 				<i class="la la-key"></i>
 			</div>
 			<div class="cfield">
-				<input type="text" placeholder="Email" />
+				<form:input type="text"  path="email" placeholder="Email" />
 				<i class="la la-envelope-o"></i>
 			</div>
-			<div class="dropdown-field">
-				<select data-placeholder="Please Select Specialism" class="chosen">
-					<option>Web Development</option>
-					<option>Web Designing</option>
-					<option>Art & Culture</option>
-					<option>Reading & Writing</option>
-				</select>
-			</div>
+			
 			<div class="cfield">
-				<input type="text" placeholder="Phone Number" />
+				<form:input type="text" path="number" placeholder="Phone Number" />
 				<i class="la la-phone"></i>
 			</div>
 			<button type="submit">Signup</button>
-		</form>
+		</form:form>
 		<div class="extra-login">
 			<span>Or</span>
 			<div class="login-social">

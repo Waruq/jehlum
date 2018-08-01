@@ -1,6 +1,8 @@
 package com.jehlum.daoImpl;
 
 
+import static org.mockito.Mockito.RETURNS_DEEP_STUBS;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -12,6 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
 
 import com.jehlum.daoInterface.UserDao;
+import com.jehlum.models.Role;
 import com.jehlum.models.User;
 
 @Repository
@@ -36,6 +39,12 @@ public class UserDaoImpl implements UserDao{
 			return true;
 		}
 		return false;
+	}
+	
+	public Role findRole(String rolename) {
+		Query query = em.createQuery("select r from Role r where r.name=: rolename") 
+				.setParameter("rolename", rolename);
+		return (Role) query.getSingleResult();
 	}
 	/*
 	@Override

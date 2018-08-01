@@ -1,12 +1,9 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,65 +23,22 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/resources/css/chosen.css" />
 	<link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/resources/css/colors/colors.css" />
 	<link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/resources/css/bootstrap.css" />
-<link rel="stylesheet" href="../../../https@maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/resources/css/bootstrap-datepicker.css" />
 	
 </head>
 <body>
 
 <div class="page-loading">
-	<img src="${pageContext.servletContext.contextPath}/resources/images/loader.gif" alt="" />
+	<img src="images/loader.gif" alt="" />
 	<span>Skip Loader</span>
 </div>
 
 <div class="theme-layout" id="scrollup">
 	
-	<div class="responsive-header">
-		<div class="responsive-menubar">
-			<div class="res-logo"><a href="index.html" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a></div>
-			<div class="menu-resaction">
-				<div class="res-openmenu">
-					<img src="${pageContext.servletContext.contextPath}/resources/images/icon.png" alt="" /> Menu
-				</div>
-				<div class="res-closemenu">
-					<img src="${pageContext.servletContext.contextPath}/resources/images/icon2.png" alt="" /> Close
-				</div>
-			</div>
-		</div>
-		<div class="responsive-opensec">
-			<div class="btn-extars">
-			    <c:url value="/createAdd" var="createadd"></c:url>
-				<a href="${createadd}" title="" class="post-job-btn"><i class="la la-plus"></i>Post Jobs</a>
-				<ul class="account-btns">
-					<li class=""><a href="/logout"><i class="la la-key"></i> Log out</a></li>
-					
-				</ul>
-			</div><!-- Btn Extras -->
-			<form class="res-search">
-				<input type="text" placeholder="Job title, keywords or company name" />
-				<button type="submit"><i class="la la-search"></i></button>
-			</form>
-		
-		</div>
-	</div>
 	
-	<header class="stick-top">
-		<div class="menu-sec">
-			<div class="container">
-				<div class="logo">
-					<a href="index.html" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a>
-				</div><!-- Logo -->
-				<div class="btn-extars">
-					  <c:url value="/createAdd" var="createadd"></c:url>
-				<a href="${createadd}" title="" class="post-job-btn"><i class="la la-plus"></i>Post Jobs</a>
-					<ul class="account-btns">
-						<li class=""><a href="/logout"><i class="la la-key"></i> Log out</a></li>
-<!-- 						<li class="signin-popup"><a title=""><i class="la la-external-link-square"></i> Login</a></li>
- -->					</ul>
-				</div><!-- Btn Extras -->
-				
-			</div>
-		</div>
-	</header>
+	
+	<jsp:include page="header.jsp"></jsp:include>
 
 	<section class="overlape">
 		<div class="block no-padding">
@@ -93,9 +47,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="inner-header">
-							<h3>Welcome <sec:authorize access="isAuthenticated()">
-							    <sec:authentication property="principal.username" /> 
-							</sec:authorize></h3>
+							<h3>Welcome Tera Planer</h3>
 						</div>
 					</div>
 				</div>
@@ -110,53 +62,71 @@
 				 	<jsp:include page="menu.jsp"></jsp:include>
 				 	<div class="col-lg-9 column">
 				 		<div class="padding-left">
-					 		<div class="manage-jobs-sec">
-					 			<h3>Manage Jobs</h3>
-					 			<div class="extra-job-info">
-						 			<span><i class="la la-clock-o"></i><strong>${fn:length(adds)}</strong> Job Posted</span>
-						 			<span><i class="la la-file-text"></i><strong>20</strong> Application</span>
-						 			<span><i class="la la-users"></i><strong>18</strong> Active Jobs</span>
-						 		</div>
-						 		<table>
-						 			<thead>
-						 				<tr>
-						 					<td>Title</td>
-						 					<td>Applications</td>
-						 					<td>Created</td>
-						 					<td>Status</td>
-						 					<td>Action</td>
-						 				</tr>
-						 			</thead>
-						 			<tbody>
-						 			  <c:forEach items="${adds}" var="add">
-						 				<tr>
-						 					<td>
-						 						<div class="table-list-title">
-						 							<h3><a href="#" title="">${add.addtitle }</a></h3>
-						 						</div>
-						 					</td>
-						 					<td>
-						 						<span class="applied-field">3+ Applied</span>
-						 					</td>
-						 					<td>
-						 						<span>${add.postTime}</span>
-						 					</td>
-						 					<td>
-						 						<span class="status active">Active</span>
-						 					</td>
-						 					<td>
-						 						<ul class="action_job">
-						 							<li><span>View Job</span><a href="${pageContext.servletContext.contextPath}/viewAdd/${add.id}" title=""><i class="la la-eye"></i></a></li>
-						 							<li><span>Edit</span><a href="#" title=""><i class="la la-pencil"></i></a></li>
-						 							<li><span>Delete</span><a href="${pageContext.servletContext.contextPath}/delete/${add.id}" title=""><i class="la la-trash-o"></i></a></li>
-						 						</ul>
-						 					</td>
-						 				</tr>
-						 				</c:forEach>
-						 				
-
-						 			</tbody>
-						 		</table>
+					 		<div class="profile-title">
+					 			<h3>Post a New Job</h3>
+					 			
+					 			  <span  style="color:green">${success}</span>
+                                   <span  style="color:red">${fail}</span>
+					 			<!-- <div class="steps-sec">
+					 				<div class="step active">
+					 					<p><i class="la la-info"></i></p>
+					 					<span>Information</span>
+					 				</div>
+					 				<div class="step">
+					 					<p><i class="la la-cc-mastercard"></i></p>
+					 					<span>Package & Payments</span>
+					 				</div>
+					 				<div class="step">
+					 					<p><i class="la  la-check-circle"></i></p>
+					 					<span>Done</span>
+					 				</div>
+					 			</div> -->
+					 		</div> 
+					 		<div class="profile-form-edit">
+					 		     <c:url value="/createAdd" var="createadd"></c:url>
+					 			<form:form method="post" action="${createadd}" modelAttribute="add" enctype="multipart/form-data">
+					 				<div class="row">
+					 					<div class="col-lg-12">
+					 						<span class="pf-title">Category</span>
+					 						<div class="pf-field">
+					 							<form:input  path="category" type="text" placeholder="Designer" />
+					 						</div>
+					 					</div>
+					 					<div class="col-lg-12">
+					 						<span class="pf-title">Add Title</span>
+					 						<div class="pf-field">
+					 							<form:input path="addtitle"></form:input>
+					 						</div>
+					 					</div>
+					 					
+					 					<div class="col-lg-12">
+					 						<span class="pf-title">Description</span>
+					 						<div class="pf-field">
+					 							<form:textarea path="description"></form:textarea>
+					 						</div>
+					 					</div>
+					 					
+					 					
+					 					<div class="col-lg-6">
+					 						<span class="pf-title">Offerd Salary</span>
+					 						<div class="pf-field">
+					 						   <form:input  path="salary" type="text" placeholder="Designer" />
+                                            </div>
+					 					</div>
+					 					
+					 					<div class="col-lg-6">
+					 						<span class="pf-title">Pictures</span>
+					 						<div class="pf-field">
+					 						    <input type="file" name="image" />
+					 						    <input type="file" name="image1" />
+                                            </div>
+					 					</div>
+					 					
+					 				</div>
+					 				<input type="submit" value="Post add">
+					 				  
+					 				
+					 			</form:form>
 					 		</div>
 					 	</div>
 					</div>
@@ -173,11 +143,11 @@
 						<div class="widget">
 							<div class="about_widget">
 								<div class="logo">
-									<a href="index.html" title=""><img src="images/resource/logo.png" alt="" /></a>
+									<a href="index.html" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a>
 								</div>
 								<span>Collin Street West, Victor 8007, Australia.</span>
 								<span>+1 246-345-0695</span>
-								<span>info@jehlum.com</span>
+								<span>info@jobhunt.com</span>
 								<div class="social">
 									<a href="#" title=""><i class="fa fa-facebook"></i></a>
 									<a href="#" title=""><i class="fa fa-twitter"></i></a>
@@ -241,7 +211,7 @@
 			</div>
 		</div>
 		<div class="bottom-line">
-			<span>© 2018 jehlum All rights reserved. Design by Waruq</span>
+			<span>© 2018 Jobhunt All rights reserved. Design by Creative Layers</span>
 			<a href="#scrollup" class="scrollup" title=""><i class="la la-arrow-up"></i></a>
 		</div>
 	</footer>
@@ -336,6 +306,21 @@
 <script src="${pageContext.servletContext.contextPath}/resources/js/parallax.js" type="text/javascript"></script>
 <script src="${pageContext.servletContext.contextPath}/resources/js/select-chosen.js" type="text/javascript"></script>
 <script src="${pageContext.servletContext.contextPath}/resources/js/jquery.scrollbar.min.js" type="text/javascript"></script>
+<script src="${pageContext.servletContext.contextPath}/resources/js/tag.js" type="text/javascript"></script>
+<script src="${pageContext.servletContext.contextPath}/resources/js/maps3.js" type="text/javascript"></script>
+
+
+
+<!-- Include Date Range Picker -->
+
+<script src="js/bootstrap-datepicker.js" type="text/javascript"></script>
+<script>
+		$(function(){
+			$('.datepicker').datepicker({
+			    format: 'mm-dd-yyyy'
+			});
+		});
+</script>
 
 </body>
 </html>

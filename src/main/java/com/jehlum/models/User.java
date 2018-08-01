@@ -1,5 +1,7 @@
 package com.jehlum.models;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class User {
@@ -32,6 +35,9 @@ public class User {
 	@ManyToOne(fetch=FetchType.EAGER,cascade=CascadeType.ALL)
 	@JoinColumn(name="Role_ID")
 	Role role;
+	
+	@OneToMany(mappedBy="user")
+	private List<PostAdd> posts;
 	
 	public Long getId() {
 		return id;
@@ -79,6 +85,15 @@ public class User {
 
 	public void setRole(Role role) {
 		this.role = role;
+	}
+	
+
+	public List<PostAdd> getPosts() {
+		return posts;
+	}
+
+	public void setPosts(List<PostAdd> posts) {
+		this.posts = posts;
 	}
 
 	@Override

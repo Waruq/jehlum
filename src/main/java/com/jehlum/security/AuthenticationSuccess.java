@@ -78,7 +78,7 @@ public class AuthenticationSuccess implements AuthenticationSuccessHandler{
             return "/Admin/Dashboard";
         } 
     	else if(isModerator || isUser) {
-    		return "/products";
+    		return "/User/Dashboard";
     	}	
          else {
             throw new IllegalStateException();

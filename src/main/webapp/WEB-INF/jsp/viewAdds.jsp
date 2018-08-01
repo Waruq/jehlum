@@ -1,8 +1,8 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -51,14 +51,16 @@
 			</div>
 		</div>
 		<div class="responsive-opensec">
-			<div class="btn-extars">
+		
+		   <div class="btn-extars">
 			    <c:url value="/createAdd" var="createadd"></c:url>
 				<a href="${createadd}" title="" class="post-job-btn"><i class="la la-plus"></i>Post Jobs</a>
 				<ul class="account-btns">
 					<li class=""><a href="/logout"><i class="la la-key"></i> Log out</a></li>
 					
 				</ul>
-			</div><!-- Btn Extras -->
+			</div>
+			<!-- Btn Extras -->
 			<form class="res-search">
 				<input type="text" placeholder="Job title, keywords or company name" />
 				<button type="submit"><i class="la la-search"></i></button>
@@ -93,9 +95,11 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="inner-header">
-							<h3>Welcome <sec:authorize access="isAuthenticated()">
+							<h3>Welcome
+							<sec:authorize access="isAuthenticated()">
 							    <sec:authentication property="principal.username" /> 
-							</sec:authorize></h3>
+							</sec:authorize>
+							</h3>
 						</div>
 					</div>
 				</div>
@@ -133,6 +137,7 @@
 						 					<td>
 						 						<div class="table-list-title">
 						 							<h3><a href="#" title="">${add.addtitle }</a></h3>
+						 							
 						 						</div>
 						 					</td>
 						 					<td>
@@ -241,7 +246,7 @@
 			</div>
 		</div>
 		<div class="bottom-line">
-			<span>© 2018 jehlum All rights reserved. Design by Waruq</span>
+			<span>Â© 2018 jehlum All rights reserved. Design by Waruq</span>
 			<a href="#scrollup" class="scrollup" title=""><i class="la la-arrow-up"></i></a>
 		</div>
 	</footer>

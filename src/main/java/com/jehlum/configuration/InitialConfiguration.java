@@ -19,14 +19,27 @@ public class InitialConfiguration {
   @EventListener
   @Transactional
     public void onApplicationEvent(ApplicationReadyEvent event){
-        Role role = new Role();
-		role.setName("ADMIN");
+	  
+	  //creating an admin
+        Role adminrole = new Role();
+        adminrole.setName("ADMIN");
 		User user = new User();
 		user.setEmail("admin@admin.com");
 		user.setPassword("admin");
 		user.setNumber("123456789");
 		user.setName("admin");
-		user.setRole(role);
+		user.setRole(adminrole);
 		userservice.save(user);
+		
+		 //creating a user
+        Role userrole = new Role();
+        userrole.setName("USER");
+		User user1 = new User();
+		user1.setEmail("test@test.com");
+		user1.setPassword("test");
+		user1.setNumber("123456789");
+		user1.setName("user");
+		user1.setRole(userrole);
+		userservice.save(user1);
 	}
 }

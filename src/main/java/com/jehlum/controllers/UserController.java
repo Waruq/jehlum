@@ -15,10 +15,9 @@ import com.jehlum.serviceInterface.AddServiceInterface;
 import com.jehlum.serviceInterface.UserServiceInterface;
 
 @Controller
-@RequestMapping("/Admin")
-public class AdminController {
-	
-	
+@RequestMapping("/User")
+public class UserController {
+
 	@Autowired
 	AddServiceInterface addservice;
 	
@@ -32,7 +31,8 @@ public class AdminController {
 		User user = userservice.findByEmail(userDetails.getUsername());
 		List<PostAdd> adds = addservice.getallAdds(user);
 		model.addAttribute("adds", adds);
-		return "admindashboard";
+			return "userdashboard";
+		}
+
 	}
 
-}
