@@ -1,8 +1,6 @@
 package com.jehlum.daoImpl;
 
 
-import static org.mockito.Mockito.RETURNS_DEEP_STUBS;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
