@@ -3,6 +3,7 @@ package com.jehlum.controllers;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.text.ParseException;
@@ -15,9 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.websocket.server.PathParam;
 
-import org.apache.commons.io.FilenameUtils;
-import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.context.SecurityContext;
@@ -32,23 +32,34 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.model.CannedAccessControlList;
+import com.amazonaws.services.s3.model.ObjectMetadata;
+import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.jehlum.models.PostAdd;
 import com.jehlum.models.User;
 import com.jehlum.serviceInterface.AddServiceInterface;
 import com.jehlum.serviceInterface.UserServiceInterface;
+import com.jehlum.util.Constants;
+import com.jehlum.util.StaticMethods;
 
 
 @Controller
 public class PostController {
 	
-	@Value("${application.path}")
-	private String path;
+	@Value("${aws.bucketName}")
+	private String bucketName;
+	
+	@Autowired
+	AmazonS3Client s3client;
 	
 	@Autowired
 	AddServiceInterface addservice;
 	
 	@Autowired
 	UserServiceInterface userservice;
+	
+	final static String folder = "jehlum";
 	
 	@RequestMapping(value="/createAdd")
 	public String createAdd(Model model) {
@@ -67,34 +78,57 @@ public class PostController {
 		String name1 = null,name2 = null;
 		String ext1 = null,ext2 = null;
 		if(!image.isEmpty()) {
-		 ext1 = FilenameUtils.getExtension(image.getOriginalFilename());
+		 ext1 = image.getContentType();
 		 name1 = String.format("%s.%s", RandomStringUtils.randomAlphanumeric(8), ext1);
 		}
 		if(!image1.isEmpty()) {
-		  ext2 = FilenameUtils.getExtension(image1.getOriginalFilename());
+		  ext2 = image1.getContentType();
 		 name2 = String.format("%s.%s", RandomStringUtils.randomAlphanumeric(8), ext2);
 		}
-		
-		File file = new File(path);
-		if(!file.exists()) {
-			file.mkdirs();
+			
+		try {
+			System.err.println("image 0 =-----="+image.getInputStream());
+			System.err.println("image 1 =-----="+image1.getInputStream());
+			System.err.println("itype"+image.getContentType());
+			System.err.println();
+
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-	
-		if(name1!=null)
-		  add.getFiles().add(name1);
-		
-		if(name2!=null)
-		  add.getFiles().add(name2);
+		if(name1!=null) {
+				String url = StaticMethods.getImageUrl(Constants.S3_URL, bucketName, folder,name1);
+		        add.getFiles().add(url);
+		  
+		}
+		if(name2!=null) {
+	        String url = StaticMethods.getImageUrl(Constants.S3_URL, bucketName, folder,name2);
+	        add.getFiles().add(url);
+		}
+		  
 		try {
 			addservice.save(add);
 			if(name1!=null) 
-				image.transferTo(new File(file+"/"+name1));
+				{
+					ObjectMetadata metadata = new ObjectMetadata();
+					metadata.setContentType(image.getContentType());
+					metadata.setContentLength(image.getSize());
+					s3client.setEndpoint(Constants.S3_URL);
+		        	s3client.putObject(new PutObjectRequest(bucketName+Constants.SUFFIX+folder,name1,image.getInputStream(), metadata).withCannedAcl(CannedAccessControlList.PublicRead));
+
+				}
 			if(name2!=null) 
-				image1.transferTo(new File(file+"/"+name2));
+				{
+					ObjectMetadata metadata = new ObjectMetadata();
+			        metadata.setContentType(image.getContentType());
+			        metadata.setContentLength(image.getSize());
+			        s3client.setEndpoint(Constants.S3_URL);
+			        s3client.putObject(new PutObjectRequest(bucketName+Constants.SUFFIX+folder,name2,image1.getInputStream(), metadata).withCannedAcl(CannedAccessControlList.PublicRead));
+
+				}
 			
-			model.addFlashAttribute("success", "Add Added Sucessfully");
+			model.addFlashAttribute("success", "Ad Added Sucessfully");
 		 }catch(Exception ex) {
-			 model.addFlashAttribute("fail", "There Is Some Problem Posting Add Please Try Again");
+			 model.addFlashAttribute("fail", "There Is Some Problem Posting Ad Please Try Again");
 		 }
 		
 		return "redirect:/createAdd";
@@ -136,7 +170,7 @@ public class PostController {
 			return new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").parse(date);
 	   }
 	 
-	 @RequestMapping(value = "/getUserImages/{imageName:.+}", method = RequestMethod.GET)
+	 /*@RequestMapping(value = "/getUserImages/{imageName:.+}", method = RequestMethod.GET)
 		public void getUserImage(@PathVariable("imageName") String imageName,
 				Model model, HttpServletRequest req, HttpServletResponse rep) {
 			//String PATH = "/usr/admin/images/";
@@ -146,7 +180,7 @@ public class PostController {
 				System.out.println("imgeName=" + imageName);
 				InputStream is = new FileInputStream(path + imageName);
 
-				byte[] bytes = IOUtils.toByteArray(is);
+				byte[] bytes = new byte[is.available()];
 				if (imageName.contains(".pdf"))
 					rep.setContentType("application/pdf");
 				else if (imageName.contains(".dwg"))
@@ -168,7 +202,7 @@ public class PostController {
 				System.out.println("Image " + imageName + " not present");
 				e.printStackTrace();
 			}
-		}
+		}*/
 
 	
 	   
