@@ -1,0 +1,22 @@
+{"properties": [
+  {
+    "name": "aws.aws_key_id",
+    "type": "java.lang.String",
+    "description": "A description for 'aws.aws_key_id'"
+  },
+  {
+    "name": "aws.awskey",
+    "type": "java.lang.String",
+    "description": "A description for 'aws.awskey'"
+  },
+  {
+    "name": "application.path",
+    "type": "java.lang.String",
+    "description": "A description for 'application.path'"
+  },
+  {
+    "name": "aws.bucketName",
+    "type": "java.lang.String",
+    "description": "A description for 'aws.bucketName'"
+  }
+]}

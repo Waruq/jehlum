@@ -1,8 +1,6 @@
 package com.jehlum.daoImpl;
 
 
-import static org.mockito.Mockito.RETURNS_DEEP_STUBS;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -42,7 +40,7 @@ public class UserDaoImpl implements UserDao{
 	}
 	
 	public Role findRole(String rolename) {
-		Query query = em.createQuery("select r from Role r where r.name=: rolename") 
+		Query query = em.createQuery("select r from Role r where r.name= :rolename") 
 				.setParameter("rolename", rolename);
 		return (Role) query.getSingleResult();
 	}

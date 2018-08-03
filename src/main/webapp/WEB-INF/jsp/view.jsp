@@ -108,7 +108,7 @@
 				 	<div class="col-lg-8 column">
 				 		<div class="job-single-sec">
 				 			<div class="job-single-head">
-				 				<div class="job-thumb"> <img src="${pageContext.servletContext.contextPath}/getUserImages/${add.files[0]}" alt="" /> </div>
+				 				<div class="job-thumb"> <img src="${add.files[0]}" alt="" /> </div>
 				 				<div class="job-head-info">
 				 					<h4>${add.addtitle}</h4>
 				 					<span>${add.category }</span>
