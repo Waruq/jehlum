@@ -40,7 +40,7 @@
 	
 	<div class="responsive-header">
 		<div class="responsive-menubar">
-			<div class="res-logo"><a href="index.html" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a></div>
+			<div class="res-logo"><a href="${pageContext.servletContext.contextPath}/" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a></div>
 			<div class="menu-resaction">
 				<div class="res-openmenu">
 					<img src="${pageContext.servletContext.contextPath}/resources/images/icon.png" alt="" /> Menu

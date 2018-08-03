@@ -24,30 +24,30 @@
 				 							<li><a href="#" title="">Contact Information</a></li> -->
 				 						</ul>
 				 					</li>
-				 					<li class="inner-child">
+				 					<!-- <li class="inner-child">
 				 						<a href="#" title=""><i class="la la-money"></i>Transactions</a>
 				 						<ul>
 				 							<li><a href="#" title="">My Profile</a></li>
 				 							<li><a href="#" title="">Social Network</a></li>
 				 							<li><a href="#" title="">Contact Information</a></li>
 				 						</ul>
-				 					</li>
-				 					<li class="inner-child">
+				 					</li> -->
+				 					<!-- <li class="inner-child">
 				 						<a href="#" title=""><i class="la la-paper-plane"></i>Resumes</a>
 				 						<ul>
 				 							<li><a href="#" title="">My Profile</a></li>
 				 							<li><a href="#" title="">Social Network</a></li>
 				 							<li><a href="#" title="">Contact Information</a></li>
 				 						</ul>
-				 					</li>
-				 					<li class="inner-child">
+				 					</li> -->
+				 					<!-- <li class="inner-child">
 				 						<a href="#" title=""><i class="la la-user"></i>Packages</a>
 				 						<ul>
 				 							<li><a href="#" title="">My Profile</a></li>
 				 							<li><a href="#" title="">Social Network</a></li>
 				 							<li><a href="#" title="">Contact Information</a></li>
 				 						</ul>
-				 					</li>
+				 					</li> -->
 				 					<li class="inner-child">
 				 					 <c:url value="/createAdd" var="createadd"></c:url>
 				 						<a href="${createadd}" title=""><i class="la la-file-text"></i>Post a New Job</a>
@@ -57,22 +57,22 @@
 <!-- 				 							<li><a href="#" title="">Contact Information</a></li> -->
 <!-- 				 						</ul> -->
 				 					</li>
-				 					<li class="inner-child">
+				 					<!-- <li class="inner-child">
 				 						<a href="#" title=""><i class="la la-flash"></i>Job Alerts</a>
 				 						<ul>
 				 							<li><a href="#" title="">My Profile</a></li>
 				 							<li><a href="#" title="">Social Network</a></li>
 				 							<li><a href="#" title="">Contact Information</a></li>
 				 						</ul>
-				 					</li>
-				 					<li class="inner-child"> 
+				 					</li> -->
+				 					<!-- <li class="inner-child"> 
 				 						<a href="#" title=""><i class="la la-lock"></i>Change Password</a>
 				 						<ul>
 				 							<li><a href="#" title="">My Profile</a></li>
 				 							<li><a href="#" title="">Social Network</a></li>
 				 							<li><a href="#" title="">Contact Information</a></li>
 				 						</ul>
-				 					</li>
+				 					</li> -->
 				 					<li><a href="${pageContext.servletContext.contextPath}/logout" title=""><i class="la la-unlink"></i>Logout</a></li>
 				 				</ul>
 				 			</div>

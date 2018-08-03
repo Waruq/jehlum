@@ -40,7 +40,7 @@
 	
 	<div class="responsive-header">
 		<div class="responsive-menubar">
-			<div class="res-logo"><a href="index.html" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a></div>
+			<div class="res-logo"><a href="${pageContext.servletContext.contextPath}/" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a></div>
 			<div class="menu-resaction">
 				<div class="res-openmenu">
 					<img src="${pageContext.servletContext.contextPath}/resources/images/icon.png" alt="" /> Menu
@@ -166,7 +166,7 @@
 	</section>
 
 	<footer>
-		<div class="block">
+		<%-- <div class="block">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3 column">
@@ -239,7 +239,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> --%>
 		<div class="bottom-line">
 			<span>© 2018 jehlum All rights reserved. Design by Waruq</span>
 			<a href="#scrollup" class="scrollup" title=""><i class="la la-arrow-up"></i></a>

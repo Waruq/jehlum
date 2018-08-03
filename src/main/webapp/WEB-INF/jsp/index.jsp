@@ -40,7 +40,7 @@
 	
 	<div class="responsive-header">
 		<div class="responsive-menubar">
-			<div class="res-logo"><a href="index.html" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a></div>
+			<div class="res-logo"><a href="${pageContext.servletContext.contextPath}/" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a></div>
 			<div class="menu-resaction">
 				<div class="res-openmenu">
 					<img src="images/icon.png" alt="" /> Menu
@@ -552,11 +552,11 @@
 		<c:url value="/j_security_check" var="login"></c:url>
 		<form method="post" action="${login}">
 			<div class="cfield">
-				<input type="text" name="username" placeholder="username" />
+				<input type="text" name="username" required="required" placeholder="email" />
 				<i class="la la-user"></i>
 			</div>
 			<div class="cfield">
-				<input type="password" name="password" placeholder="********" />
+				<input type="password" name="password" required="required" placeholder="********" />
 				<i class="la la-key"></i>
 			</div>
 			<p class="remember-label">
@@ -585,7 +585,7 @@
 		<form:form method="post" action="${reg}" modelAttribute="user">
 		
 		    <div class="select-user">
-			<span><input type="radio" name="usertype" value="admin"/>Admin</span>
+			<span><input type="radio"  name="usertype" value="admin"/>Admin</span>
 			<span> <input type="radio" name="usertype" value="user"/>User</span>
 		   </div>
 			
@@ -595,20 +595,20 @@
 			</div> -->
 			
 			<div class="cfield">
-				<form:input type="text" path="name" placeholder="Username" />
+				<form:input type="text" path="name" required="required" placeholder="Username" />
 				<i class="la la-user"></i>
 			</div>
 			<div class="cfield">
-				<form:input type="password" path="password" placeholder="********" />
+				<form:input type="password" path="password" required="required" placeholder="********" />
 				<i class="la la-key"></i>
 			</div>
 			<div class="cfield">
-				<form:input type="text"  path="email" placeholder="Email" />
+				<form:input type="text"  path="email" required="required" placeholder="Email" />
 				<i class="la la-envelope-o"></i>
 			</div>
 			
 			<div class="cfield">
-				<form:input type="text" path="number" placeholder="Phone Number" />
+				<form:input type="text" path="number" required="required" placeholder="Phone Number" />
 				<i class="la la-phone"></i>
 			</div>
 			<button type="submit">Signup</button>

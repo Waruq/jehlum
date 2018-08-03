@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
@@ -30,7 +31,7 @@ public class PostAdd {
 	
 	private String description;
 	
-	private Double salary;
+	private String salary;
 	
 	@DateTimeFormat(pattern="dd-MM-yyyy HH:mm:ss")
 	private Date postTime;
@@ -65,11 +66,14 @@ public class PostAdd {
 		this.description = description;
 	}
 
-	public Double getSalary() {
+	
+	
+
+	public String getSalary() {
 		return salary;
 	}
 
-	public void setSalary(Double salary) {
+	public void setSalary(String salary) {
 		this.salary = salary;
 	}
 
@@ -109,6 +113,11 @@ public class PostAdd {
         int diffYear = endCalendar.get(Calendar.YEAR) - startCalendar.get(Calendar.YEAR);
 		int diffMonth = diffYear * 12 + endCalendar.get(Calendar.MONTH) - startCalendar.get(Calendar.MONTH);
 		return diffMonth;
+	}
+	
+	public long getPostTimeinDays() {
+		long diff = new Date().getTime() - this.postTime.getTime();
+	     return  TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
 	}
 
 	public void setPostTime(Date postTime) {

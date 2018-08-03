@@ -42,7 +42,7 @@
 		<div class="responsive-header">
 			<div class="responsive-menubar">
 				<div class="res-logo">
-					<a href="index.html" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a>
+					<a href="${pageContext.servletContext.contextPath}/" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a>
 				</div>
 				<div class="menu-resaction">
 					<div class="res-openmenu">
@@ -93,6 +93,7 @@
 			<div class="block no-padding">
 				<div data-velocity="-.1" style="background: url(${pageContext.servletContext.contextPath}/resources/images/resource/mslider1.jpg) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div>
 				<!-- PARALLAX BACKGROUND IMAGE -->
+					<jsp:include page="menu.jsp"></jsp:include>
 				<div class="container fluid">
 					<div class="row">
 						<div class="col-lg-12">
@@ -246,7 +247,7 @@
 		</section>
 
 		<footer>
-			<div class="block">
+			<%-- <div class="block">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-3 column">
@@ -320,7 +321,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> --%>
 			<div class="bottom-line">
 				<span>© 2018 jehlum All rights reserved. Design by Waruq</span>
 				<a href="#scrollup" class="scrollup" title=""><i class="la la-arrow-up"></i></a>

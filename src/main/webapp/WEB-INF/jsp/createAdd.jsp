@@ -1,5 +1,7 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -35,10 +37,57 @@
 </div>
 
 <div class="theme-layout" id="scrollup">
+<div class="responsive-header">
+		<div class="responsive-menubar">
+			<div class="res-logo"><a href="${pageContext.servletContext.contextPath}/" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a></div>
+			<div class="menu-resaction">
+				<div class="res-openmenu">
+					<img src="${pageContext.servletContext.contextPath}/resources/images/icon.png" alt="" /> Menu
+				</div>
+				<div class="res-closemenu">
+					<img src="${pageContext.servletContext.contextPath}/resources/images/icon2.png" alt="" /> Close
+				</div>
+			</div>
+		</div>
+		<div class="responsive-opensec">
+		
+		   <div class="btn-extars">
+			    <c:url value="/createAdd" var="createadd"></c:url>
+				<a href="${createadd}" title="" class="post-job-btn"><i class="la la-plus"></i>Post Jobs</a>
+				<ul class="account-btns">
+					<li class=""><a href="/logout"><i class="la la-key"></i> Log out</a></li>
+					
+				</ul>
+			</div>
+			<!-- Btn Extras -->
+			<form class="res-search">
+				<input type="text" placeholder="Job title, keywords or company name" />
+				<button type="submit"><i class="la la-search"></i></button>
+			</form>
+		
+		</div>
+	</div>
 	
+	<header class="stick-top">
+		<div class="menu-sec">
+			<div class="container">
+				<div class="logo">
+					<a href="index.html" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a>
+				</div><!-- Logo -->
+				<div class="btn-extars">
+					  <c:url value="/createAdd" var="createadd"></c:url>
+				<a href="${createadd}" title="" class="post-job-btn"><i class="la la-plus"></i>Post Jobs</a>
+					<ul class="account-btns">
+						<li class=""><a href="/logout"><i class="la la-key"></i> Log out</a></li>
+<!-- 						<li class="signin-popup"><a title=""><i class="la la-external-link-square"></i> Login</a></li>
+ -->					</ul>
+				</div><!-- Btn Extras -->
+				
+			</div>
+		</div>
+	</header>
 	
-	
-	<jsp:include page="header.jsp"></jsp:include>
+
 
 	<section class="overlape">
 		<div class="block no-padding">
@@ -47,7 +96,9 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="inner-header">
-							<h3>Welcome Tera Planer</h3>
+							<h3>Welcome <sec:authorize access="isAuthenticated()">
+							    <sec:authentication property="principal.username" /> 
+							</sec:authorize></h3>
 						</div>
 					</div>
 				</div>
@@ -89,20 +140,20 @@
 					 					<div class="col-lg-12">
 					 						<span class="pf-title">Category</span>
 					 						<div class="pf-field">
-					 							<form:input  path="category" type="text" placeholder="Designer" />
+					 							<form:input required="required"  path="category" type="text" placeholder="Designer" />
 					 						</div>
 					 					</div>
 					 					<div class="col-lg-12">
 					 						<span class="pf-title">Add Title</span>
 					 						<div class="pf-field">
-					 							<form:input path="addtitle"></form:input>
+					 							<form:input required="required" path="addtitle"></form:input>
 					 						</div>
 					 					</div>
 					 					
 					 					<div class="col-lg-12">
 					 						<span class="pf-title">Description</span>
 					 						<div class="pf-field">
-					 							<form:textarea path="description"></form:textarea>
+					 							<form:textarea required="required" path="description"></form:textarea>
 					 						</div>
 					 					</div>
 					 					
@@ -110,7 +161,7 @@
 					 					<div class="col-lg-6">
 					 						<span class="pf-title">Offerd Salary</span>
 					 						<div class="pf-field">
-					 						   <form:input  path="salary" type="text" placeholder="Designer" />
+					 						   <form:input required="required"  path="salary" type="text" placeholder="Designer" />
                                             </div>
 					 					</div>
 					 					
@@ -136,7 +187,7 @@
 	</section>
 
 	<footer>
-		<div class="block">
+		<%-- <div class="block">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3 column">
@@ -209,7 +260,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> --%>
 		<div class="bottom-line">
 			<span>© 2018 Jobhunt All rights reserved. Design by Creative Layers</span>
 			<a href="#scrollup" class="scrollup" title=""><i class="la la-arrow-up"></i></a>
