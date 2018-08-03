@@ -41,5 +41,16 @@ public class InitialConfiguration {
 		user1.setName("user");
 		user1.setRole(userrole);
 		userservice.save(user1);
+		
+		 //creating a moderator
+        Role moderatorrole = new Role();
+        moderatorrole.setName("MODERATOR");
+		User user2 = new User();
+		user2.setEmail("moderator@test.com");
+		user2.setPassword("moderator");
+		user2.setNumber("123456789");
+		user2.setName("moderator");
+		user2.setRole(moderatorrole);
+		userservice.save(user2);
 	}
 }

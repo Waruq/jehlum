@@ -103,7 +103,7 @@
 
                                            <span  style="color:red">check your credentials and login again</span>
                                        </c:if>
-                                       <span  style="color:green">${success}</span>
+                                       <span  style="color:white">${success}</span>
                                         <span  style="color:red">${fail}</span>
                                       
 									<form>
@@ -585,7 +585,7 @@
 		<form:form method="post" action="${reg}" modelAttribute="user">
 		
 		    <div class="select-user">
-			<span><input type="radio"  name="usertype" value="admin"/>Admin</span>
+			<span><input type="radio"  name="usertype" value="moderator"/>Moderator</span>
 			<span> <input type="radio" name="usertype" value="user"/>User</span>
 		   </div>
 			
