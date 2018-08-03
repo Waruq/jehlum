@@ -11603,8 +11603,9 @@ header.style4 .account-btns > li a,
 body > div.account-popup-area.signin-popup-box > div > span > i {     position: relative;
     top: 14px;}
     
-    la-close{ position: relative;
-    top: 14px; }
+    la-close{ 
+    position: relative !important;
+    top: 14px !important; }
 .fa-facebook{ position: relative;
     top: 10px; }
     .fa-twitter{  position: relative;

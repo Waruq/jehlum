@@ -529,7 +529,7 @@
 								</div>
 								</div>
 						
-							<div class="pagination">
+							<!-- <div class="pagination">
 								<ul>
 									<li class="prev"><a href="default.htm"><i class="la la-long-arrow-left"></i> Prev</a></li>
 									<li><a href="default.htm">1</a></li>
@@ -539,7 +539,7 @@
 									<li><a href="default.htm">14</a></li>
 									<li class="next"><a href="default.htm">Next <i class="la la-long-arrow-right"></i></a></li>
 								</ul>
-							</div>
+							</div> -->
 							<!-- Pagination -->
 						</div>
 						
