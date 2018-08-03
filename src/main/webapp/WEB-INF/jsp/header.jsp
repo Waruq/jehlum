@@ -1,6 +1,6 @@
 <div class="responsive-header">
 		<div class="responsive-menubar">
-			<div class="res-logo"><a href="index.html" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a></div>
+			<div class="res-logo"><a href="/" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a></div>
 			<div class="menu-resaction">
 				<div class="res-openmenu">
 					<img src="images/icon.png" alt="" /> Menu
@@ -27,11 +27,11 @@
 						<li class="menu-item-has-children">
 							<a href="#" title="">Home</a>
 							<ul>
-								<li><a href="index.html" title="">Home Layout 1</a></li>
-								<li><a href="index2.html" title="">Home Layout 2</a></li>
-								<li><a href="index3.html" title="">Home Layout 3</a></li>
-								<li><a href="index4.html" title="">Home Layout 4</a></li>
-								<li><a href="index5.html" title="">Home Layout 5</a></li>
+								<li><a href="/" title="">Home Layout 1</a></li>
+								<li><a href="/" title="">Home Layout 2</a></li>
+								<li><a href="/" title="">Home Layout 3</a></li>
+								<li><a href="/" title="">Home Layout 4</a></li>
+								<li><a href="/" title="">Home Layout 5</a></li>
 							</ul>
 						</li>
 						<li class="menu-item-has-children">
@@ -125,7 +125,7 @@
 		<div class="menu-sec">
 			<div class="container">
 				<div class="logo">
-					<a href="index.html" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a>
+					<a href="/" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a>
 				</div><!-- Logo -->
 				<div class="btns-profiles-sec">
 					<span><img src="images/resource/profile.jpg" alt="" /> Tera Planer <i class="la la-angle-down"></i></span>
@@ -146,7 +146,7 @@
 						<li class="menu-item-has-children">
 							<a href="#" title="">Home</a>
 							<ul>
-								<li><a href="index.html" title="">Home Layout 1</a></li>
+								<li><a href="/" title="">Home Layout 1</a></li>
 								<li><a href="index2.html" title="">Home Layout 2</a></li>
 								<li><a href="index3.html" title="">Home Layout 3</a></li>
 								<li><a href="index4.html" title="">Home Layout 4</a></li>

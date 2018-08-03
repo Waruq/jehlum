@@ -70,7 +70,7 @@
 		<div class="menu-sec">
 			<div class="container">
 				<div class="logo">
-					<a href="index.html" title=""><img class="hidesticky" src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /><img class="showsticky" src="images/resource/logo10.png" alt="" /></a>
+					<a href="/" title=""><img class="hidesticky" src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /><img class="showsticky" src="images/resource/logo10.png" alt="" /></a>
 				</div><!-- Logo -->
 				<div class="btn-extars">
 					<a href="#" title="" class="post-job-btn signin-popup"><i class="la la-plus"></i>Post Jobs</a>
@@ -468,7 +468,7 @@
 						<div class="widget">
 							<div class="about_widget">
 								<div class="logo">
-									<a href="index.html" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a>
+									<a href="/" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a>
 								</div>
 								<span>Collin Street West, Victor 8007, Australia.</span>
 								<span>+1 246-345-0695</span>

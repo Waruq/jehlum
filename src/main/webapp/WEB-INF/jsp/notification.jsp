@@ -42,7 +42,7 @@
 		<div class="responsive-header">
 			<div class="responsive-menubar">
 				<div class="res-logo">
-					<a href="${pageContext.servletContext.contextPath}/" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a>
+					<a href="/" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a>
 				</div>
 				<div class="menu-resaction">
 					<div class="res-openmenu">
@@ -74,7 +74,7 @@
 		<div class="menu-sec">
 			<div class="container">
 				<div class="logo">
-					<a href="index.html" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a>
+					<a href="/" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a>
 				</div><!-- Logo -->
 				<div class="btn-extars">
 					  <c:url value="/createAdd" var="createadd"></c:url>
@@ -93,7 +93,6 @@
 			<div class="block no-padding">
 				<div data-velocity="-.1" style="background: url(${pageContext.servletContext.contextPath}/resources/images/resource/mslider1.jpg) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div>
 				<!-- PARALLAX BACKGROUND IMAGE -->
-					<jsp:include page="menu.jsp"></jsp:include>
 				<div class="container fluid">
 					<div class="row">
 						<div class="col-lg-12">
@@ -223,9 +222,313 @@
 											</div>
 										</div>
 									</div>
+									<div class="widget border" style="margin-top: 10px;">
+										<h3 class="sb-title closed">SSC</h3>
+										<div class="specialism_widget">
+											<div class="simple-checkbox">
+												<div class="row">
+												<c:forEach items="${SSC}" var="n">
+													<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+														<div class="my-blog">
+															<div class="blog-details">
+																<p>${n.notificationText} </p>
+																<a href="${n.notificationUrl}" title="">Read More <i class="la la-long-arrow-right"></i></a>
+															</div>
+														</div>
+													</div>
+													</c:forEach>
 
-								
-							</div>
+												</div>
+
+											</div>
+										</div>
+									</div>
+									<div class="widget border" style="margin-top: 10px;">
+										<h3 class="sb-title closed">Central University Jammu</h3>
+										<div class="specialism_widget">
+											<div class="simple-checkbox">
+												<div class="row">
+												<c:forEach items="${CUJAMMU}" var="n">
+													<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+														<div class="my-blog">
+															<div class="blog-details">
+																<p>${n.notificationText} </p>
+																<a href="${n.notificationUrl}" title="">Read More <i class="la la-long-arrow-right"></i></a>
+															</div>
+														</div>
+													</div>
+													</c:forEach>
+
+												</div>
+
+											</div>
+										</div>
+									</div>
+									<div class="widget border" style="margin-top: 10px;">
+										<h3 class="sb-title closed">Cluster University Jammu</h3>
+										<div class="specialism_widget">
+											<div class="simple-checkbox">
+												<div class="row">
+												<c:forEach items="${CLUJAMMU}" var="n">
+													<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+														<div class="my-blog">
+															<div class="blog-details">
+																<p>${n.notificationText} </p>
+																<a href="${n.notificationUrl}" title="">Read More <i class="la la-long-arrow-right"></i></a>
+															</div>
+														</div>
+													</div>
+													</c:forEach>
+
+												</div>
+
+											</div>
+										</div>
+									</div><div class="widget border" style="margin-top: 10px;">
+										<h3 class="sb-title closed">JKBOPEE</h3>
+										<div class="specialism_widget">
+											<div class="simple-checkbox">
+												<div class="row">
+												<c:forEach items="${JKBOPEE}" var="n">
+													<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+														<div class="my-blog">
+															<div class="blog-details">
+																<p>${n.notificationText} </p>
+																<a href="${n.notificationUrl}" title="">Read More <i class="la la-long-arrow-right"></i></a>
+															</div>
+														</div>
+													</div>
+													</c:forEach>
+
+												</div>
+
+											</div>
+										</div>
+									</div><div class="widget border" style="margin-top: 10px;">
+										<h3 class="sb-title closed">JKBOSE</h3>
+										<div class="specialism_widget">
+											<div class="simple-checkbox">
+												<div class="row">
+												<c:forEach items="${JKBOSE}" var="n">
+													<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+														<div class="my-blog">
+															<div class="blog-details">
+																<p>${n.notificationText} </p>
+																<a href="${n.notificationUrl}" title="">Read More <i class="la la-long-arrow-right"></i></a>
+															</div>
+														</div>
+													</div>
+													</c:forEach>
+
+												</div>
+
+											</div>
+										</div>
+									</div><div class="widget border" style="margin-top: 10px;">
+										<h3 class="sb-title closed">Chenab Valley Power Projects</h3>
+										<div class="specialism_widget">
+											<div class="simple-checkbox">
+												<div class="row">
+												<c:forEach items="${CVPP}" var="n">
+													<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+														<div class="my-blog">
+															<div class="blog-details">
+																<p>${n.notificationText} </p>
+																<a href="${n.notificationUrl}" title="">Read More <i class="la la-long-arrow-right"></i></a>
+															</div>
+														</div>
+													</div>
+													</c:forEach>
+
+												</div>
+
+											</div>
+										</div>
+									</div><div class="widget border" style="margin-top: 10px;">
+										<h3 class="sb-title closed">GCET KASHMIR</h3>
+										<div class="specialism_widget">
+											<div class="simple-checkbox">
+												<div class="row">
+												<c:forEach items="${GCETKASHMIR}" var="n">
+													<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+														<div class="my-blog">
+															<div class="blog-details">
+																<p>${n.notificationText} </p>
+																<a href="${n.notificationUrl}" title="">Read More <i class="la la-long-arrow-right"></i></a>
+															</div>
+														</div>
+													</div>
+													</c:forEach>
+
+												</div>
+
+											</div>
+										</div>
+									</div><div class="widget border" style="margin-top: 10px;">
+										<h3 class="sb-title closed">DPS SRINAGAR</h3>
+										<div class="specialism_widget">
+											<div class="simple-checkbox">
+												<div class="row">
+												<c:forEach items="${DPSSRINAGAR}" var="n">
+													<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+														<div class="my-blog">
+															<div class="blog-details">
+																<p>${n.notificationText} </p>
+																<a href="${n.notificationUrl}" title="">Read More <i class="la la-long-arrow-right"></i></a>
+															</div>
+														</div>
+													</div>
+													</c:forEach>
+
+												</div>
+
+											</div>
+										</div>
+									</div><div class="widget border" style="margin-top: 10px;">
+										<h3 class="sb-title closed">JK BANK</h3>
+										<div class="specialism_widget">
+											<div class="simple-checkbox">
+												<div class="row">
+												<c:forEach items="${JKBANK}" var="n">
+													<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+														<div class="my-blog">
+															<div class="blog-details">
+																<p>${n.notificationText} </p>
+																<a href="${n.notificationUrl}" title="">Read More <i class="la la-long-arrow-right"></i></a>
+															</div>
+														</div>
+													</div>
+													</c:forEach>
+
+												</div>
+
+											</div>
+										</div>
+									</div><div class="widget border" style="margin-top: 10px;">
+										<h3 class="sb-title closed">JK RMSA</h3>
+										<div class="specialism_widget">
+											<div class="simple-checkbox">
+												<div class="row">
+												<c:forEach items="${JKRMSA}" var="n">
+													<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+														<div class="my-blog">
+															<div class="blog-details">
+																<p>${n.notificationText} </p>
+																<a href="${n.notificationUrl}" title="">Read More <i class="la la-long-arrow-right"></i></a>
+															</div>
+														</div>
+													</div>
+													</c:forEach>
+
+												</div>
+
+											</div>
+										</div>
+									</div><div class="widget border" style="margin-top: 10px;">
+										<h3 class="sb-title closed">NIT SRINAGAR</h3>
+										<div class="specialism_widget">
+											<div class="simple-checkbox">
+												<div class="row">
+												<c:forEach items="${NITSRINAGAR}" var="n">
+													<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+														<div class="my-blog">
+															<div class="blog-details">
+																<p>${n.notificationText} </p>
+																<a href="${n.notificationUrl}" title="">Read More <i class="la la-long-arrow-right"></i></a>
+															</div>
+														</div>
+													</div>
+													</c:forEach>
+
+												</div>
+
+											</div>
+										</div>
+									</div><div class="widget border" style="margin-top: 10px;">
+										<h3 class="sb-title closed">SKIMS</h3>
+										<div class="specialism_widget">
+											<div class="simple-checkbox">
+												<div class="row">
+												<c:forEach items="${SKIMS}" var="n">
+													<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+														<div class="my-blog">
+															<div class="blog-details">
+																<p>${n.notificationText} </p>
+																<a href="${n.notificationUrl}" title="">Read More <i class="la la-long-arrow-right"></i></a>
+															</div>
+														</div>
+													</div>
+													</c:forEach>
+
+												</div>
+
+											</div>
+										</div>
+									</div><div class="widget border" style="margin-top: 10px;">
+										<h3 class="sb-title closed">SKUAST</h3>
+										<div class="specialism_widget">
+											<div class="simple-checkbox">
+												<div class="row">
+												<c:forEach items="${SKUAST}" var="n">
+													<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+														<div class="my-blog">
+															<div class="blog-details">
+																<p>${n.notificationText} </p>
+																<a href="${n.notificationUrl}" title="">Read More <i class="la la-long-arrow-right"></i></a>
+															</div>
+														</div>
+													</div>
+													</c:forEach>
+
+												</div>
+
+											</div>
+										</div>
+									</div><div class="widget border" style="margin-top: 10px;">
+										<h3 class="sb-title closed">SMVDU</h3>
+										<div class="specialism_widget">
+											<div class="simple-checkbox">
+												<div class="row">
+												<c:forEach items="${SMVDU}" var="n">
+													<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+														<div class="my-blog">
+															<div class="blog-details">
+																<p>${n.notificationText} </p>
+																<a href="${n.notificationUrl}" title="">Read More <i class="la la-long-arrow-right"></i></a>
+															</div>
+														</div>
+													</div>
+													</c:forEach>
+
+												</div>
+
+											</div>
+										</div>
+									</div>
+									<div class="widget border" style="margin-top: 10px;">
+										<h3 class="sb-title closed">UPSC</h3>
+										<div class="specialism_widget">
+											<div class="simple-checkbox">
+												<div class="row">
+												<c:forEach items="${UPSC}" var="n">
+													<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+														<div class="my-blog">
+															<div class="blog-details">
+																<p>${n.notificationText} </p>
+																<a href="${n.notificationUrl}" title="">Read More <i class="la la-long-arrow-right"></i></a>
+															</div>
+														</div>
+													</div>
+													</c:forEach>
+
+												</div>
+
+											</div>
+										</div>
+									
+								</div>
+								</div>
+						
 							<div class="pagination">
 								<ul>
 									<li class="prev"><a href="default.htm"><i class="la la-long-arrow-left"></i> Prev</a></li>
@@ -247,14 +550,14 @@
 		</section>
 
 		<footer>
-			<%-- <div class="block">
+			<div class="block">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-3 column">
 							<div class="widget">
 								<div class="about_widget">
 									<div class="logo">
-										<a href="index.html" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a>
+										<a href="/" title=""><img src="${pageContext.servletContext.contextPath}/resources/images/resource/logo.png" alt="" /></a>
 									</div>
 									<span>Collin Street West, Victor 8007, Australia.</span>
 									<span>+1 246-345-0695</span>
@@ -321,7 +624,7 @@
 						</div>
 					</div>
 				</div>
-			</div> --%>
+			</div>
 			<div class="bottom-line">
 				<span>© 2018 jehlum All rights reserved. Design by Waruq</span>
 				<a href="#scrollup" class="scrollup" title=""><i class="la la-arrow-up"></i></a>

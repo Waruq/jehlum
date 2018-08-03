@@ -11599,3 +11599,6 @@ header.style4 .account-btns > li a,
     -o-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s;
 }
+
+body > div.account-popup-area.signin-popup-box > div > span > i {     position: relative;
+    top: 14px;}
